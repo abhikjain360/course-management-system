@@ -54,6 +54,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         loginBTN.setText("Login");
+        loginBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBTNActionPerformed(evt);
+            }
+        });
 
         exitBTN.setForeground(new java.awt.Color(255, 0, 0));
         exitBTN.setText("Exit");
@@ -125,6 +130,11 @@ public class Login extends javax.swing.JFrame {
         nameTXT.setText(null);
         pwdTXT.setText(null);
     }//GEN-LAST:event_clearBTNActionPerformed
+
+    private void loginBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTNActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_loginBTNActionPerformed
 
     /**
      * @param args the command line arguments
