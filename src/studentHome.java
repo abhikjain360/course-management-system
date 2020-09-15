@@ -32,49 +32,75 @@ public class studentHome extends javax.swing.JFrame {
         logoutBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(java.awt.Color.darkGray);
 
+        jScrollPane1.setBackground(java.awt.Color.darkGray);
+        jScrollPane1.setForeground(java.awt.Color.white);
+
+        courseTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        courseTable.setForeground(java.awt.Color.white);
         courseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Name", "Professor", "Prereq", "Duration", "Students"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        courseTable.setAutoscrolls(false);
+        courseTable.setShowGrid(true);
         jScrollPane1.setViewportView(courseTable);
+        if (courseTable.getColumnModel().getColumnCount() > 0) {
+            courseTable.getColumnModel().getColumn(5).setHeaderValue("Students");
+        }
 
+        leaveCourseBTN.setBackground(new java.awt.Color(1, 188, 235));
+        leaveCourseBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
+        leaveCourseBTN.setForeground(java.awt.Color.black);
         leaveCourseBTN.setText("Leave Course");
+        leaveCourseBTN.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        leaveCourseBTN.setBorderPainted(false);
 
-        logoutBTN.setForeground(new java.awt.Color(255, 0, 0));
+        logoutBTN.setBackground(new java.awt.Color(6, 201, 235));
+        logoutBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
+        logoutBTN.setForeground(java.awt.Color.black);
         logoutBTN.setText("Logout");
+        logoutBTN.setBorderPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(leaveCourseBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(leaveCourseBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 311, Short.MAX_VALUE)
                 .addComponent(logoutBTN)
                 .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(leaveCourseBTN)
-                    .addComponent(logoutBTN))
+                    .addComponent(leaveCourseBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logoutBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55))
         );
 

@@ -37,31 +37,53 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        headLabel.setBackground(java.awt.Color.white);
         headLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        headLabel.setForeground(java.awt.Color.black);
         headLabel.setText("Course Management System");
 
+        nameLabel.setBackground(java.awt.Color.white);
         nameLabel.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        nameLabel.setForeground(java.awt.Color.black);
         nameLabel.setText("Enter Name");
 
+        pwdLabel.setBackground(java.awt.Color.white);
         pwdLabel.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        pwdLabel.setForeground(java.awt.Color.black);
         pwdLabel.setText("Enter Password");
 
+        nameTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTXTActionPerformed(evt);
+            }
+        });
+
+        clearBTN.setBackground(new java.awt.Color(1, 188, 235));
+        clearBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
         clearBTN.setText("Clear");
+        clearBTN.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearBTN.setBorderPainted(false);
         clearBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearBTNActionPerformed(evt);
             }
         });
 
+        loginBTN.setBackground(new java.awt.Color(1, 188, 235));
+        loginBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
         loginBTN.setText("Login");
+        loginBTN.setBorderPainted(false);
         loginBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBTNActionPerformed(evt);
             }
         });
 
-        exitBTN.setForeground(new java.awt.Color(255, 0, 0));
+        exitBTN.setBackground(new java.awt.Color(1, 188, 235));
+        exitBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
+        exitBTN.setForeground(java.awt.Color.black);
         exitBTN.setText("Exit");
+        exitBTN.setBorderPainted(false);
         exitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBTNActionPerformed(evt);
@@ -82,21 +104,24 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(headLabel)
-                        .addGap(0, 68, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pwdLabel)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(pwdLabel))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(clearBTN)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pwdTXT)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(exitBTN)
+                                .addGap(27, 27, 27))
+                            .addComponent(pwdTXT))))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(clearBTN)
-                .addGap(73, 73, 73)
-                .addComponent(loginBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitBTN)
-                .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,11 +137,14 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(pwdLabel)
                     .addComponent(pwdTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clearBTN)
-                    .addComponent(loginBTN)
-                    .addComponent(exitBTN))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(exitBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(1, 1, 1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,6 +163,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_loginBTNActionPerformed
+
+    private void nameTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTXTActionPerformed
 
     /**
      * @param args the command line arguments
