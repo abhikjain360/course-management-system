@@ -188,6 +188,9 @@ public class Login extends javax.swing.JFrame {
 	
 	// boolean to keep track of failed of successful login attempt
 	boolean success  = false;
+
+	// boolean if teacher
+	boolean isTeacher = false;
 	
 	// cacthing the sql exception
 	try {
@@ -211,6 +214,7 @@ public class Login extends javax.swing.JFrame {
 				if (rs.getString("name").equals(name)
 					&& rs.getString("password").equals(password)) {
 					success = true;
+					isTeacher = true;
 				}
 			}
 		}
