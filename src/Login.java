@@ -172,50 +172,39 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTNActionPerformed
         // get info from all fields
-	String name = nameTXT.getText();
-	String password = String.valueOf(pwdTXT.getPassword());
+	sessionManager.sessionUsername = nameTXT.getText();
+	sessionManager.sessionUserPassword = String.valueOf(pwdTXT.getPassword());
 	
 	// sql queries to check name and password
-	String teacherQuery = "SELECT name,password FROM teachers "
-			    + "WHERE name=\'" + name + "\'"
-			    + "AND password=\'" + password + "\';";
-	String studentQuery = "SELECT name,password FROM students "
-			    + "WHERE name=\'" + name + "\'"
-			    + "AND password=\'" + password + "\';";
-	
-	// url for jdbc to connect to
-	String url = "jdbc:sqlite:/home/abhik/Desktop/oop2/netbreans/course-management-system/db/cms.db";
-	
+	String teacherQuery = "SELECT name,password,id FROM teachers "
+			    + "WHERE name=\'" + sessionManager.sessionUsername + "\'"
+			    + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
+	String studentQuery = "SELECT name,password,id FROM students "
+			    + "WHERE name=\'" + sessionManager.sessionUsername + "\'"
+			    + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
+
 	// boolean to keep track of failed of successful login attempt
 	boolean success  = false;
 
-	// boolean if teacher
-	boolean isTeacher = false;
-	
 	// cacthing the sql exception
 	try {
 		// boilerplate code
-		Connection conn = DriverManager.getConnection(url);
+		Connection conn = DriverManager.getConnection(sessionManager.databaseURL);
 		Statement stmt = conn.createStatement();
 		
 		// get result from studentQuery
 		ResultSet rs = stmt.executeQuery(studentQuery);
-		while (rs.next() && !success) {
-			if (rs.getString("name").equals(name)
-				&& rs.getString("password").equals(password)) {
-				success = true;
-			}
-		}
-		
-		// get result from teacherQuery if studentQuery failed
-		if (!success) {
+
+		// There should be a single match, no need to check here again as SQL already checked
+		if (rs.next()) {
+			success = true;
+			sessionManager.sessionUserID = rs.getString("id");
+		} else {
 			rs = stmt.executeQuery(teacherQuery);
-			while (rs.next() && !success) {
-				if (rs.getString("name").equals(name)
-					&& rs.getString("password").equals(password)) {
-					success = true;
-					isTeacher = true;
-				}
+			if (rs.next()) {
+				success = true;
+				sessionManager.isTeacher = true;
+                sessionManager.sessionUserID = rs.getString("id");
 			}
 		}
 	} catch (SQLException e) {
@@ -225,7 +214,7 @@ public class Login extends javax.swing.JFrame {
 	if (success) {
 		System.out.println("Login Success");
 
-		// new frame's code goes here
+		// new frame's code goes here @Ishan Kumar Kaler
 
 	} else {
 		// clear all fields
