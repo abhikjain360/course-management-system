@@ -8,6 +8,17 @@
  *
  * @author Abhik Jain, Ayush Mehar & Ishan Kumar Kaler
  */
+
+// imports for database
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+// import for JOptionPane
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -160,8 +171,66 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_clearBTNActionPerformed
 
     private void loginBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTNActionPerformed
-        // TODO add your handling code here:
-        
+        // get info from all fields
+	String name = nameTXT.getText();
+	String password = String.valueOf(pwdTXT.getPassword());
+	
+	// sql queries to check name and password
+	String teacherQuery = "SELECT name,password FROM teachers "
+			    + "WHERE name=\'" + name + "\'"
+			    + "AND password=\'" + password + "\';";
+	String studentQuery = "SELECT name,password FROM students "
+			    + "WHERE name=\'" + name + "\'"
+			    + "AND password=\'" + password + "\';";
+	
+	// url for jdbc to connect to
+	String url = "jdbc:sqlite:/home/abhik/Desktop/oop2/netbreans/course-management-system/db/cms.db";
+	
+	// boolean to keep track of failed of successful login attempt
+	boolean success  = false;
+	
+	// cacthing the sql exception
+	try {
+		// boilerplate code
+		Connection conn = DriverManager.getConnection(url);
+		Statement stmt = conn.createStatement();
+		
+		// get result from studentQuery
+		ResultSet rs = stmt.executeQuery(studentQuery);
+		while (rs.next() && !success) {
+			if (rs.getString("name").equals(name)
+				&& rs.getString("password").equals(password)) {
+				success = true;
+			}
+		}
+		
+		// get result from teacherQuery if studentQuery failed
+		if (!success) {
+			rs = stmt.executeQuery(teacherQuery);
+			while (rs.next() && !success) {
+				if (rs.getString("name").equals(name)
+					&& rs.getString("password").equals(password)) {
+					success = true;
+				}
+			}
+		}
+	} catch (SQLException e) {
+		System.out.println(e.getMessage());
+	}
+	
+	if (success) {
+		System.out.println("Login Success");
+
+		// new frame's code goes here
+
+	} else {
+		// clear all fields
+		pwdTXT.setText(null);
+		nameTXT.setText(null);
+
+		// show failed login
+		JOptionPane.showMessageDialog(rootPane, "Login Failed!");
+	}
     }//GEN-LAST:event_loginBTNActionPerformed
 
     private void nameTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTXTActionPerformed
