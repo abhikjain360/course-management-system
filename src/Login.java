@@ -18,6 +18,7 @@ import java.sql.Statement;
 
 // import for JOptionPane
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Login extends javax.swing.JFrame {
 
@@ -130,12 +131,12 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 18, Short.MAX_VALUE))
+                        .addGap(0, 25, Short.MAX_VALUE))
                     .addComponent(nameTXT)
-                    .addComponent(pwdTXT))
+                    .addComponent(pwdTXT, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(headLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -153,14 +154,12 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(pwdLabel)
                     .addComponent(pwdTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(exitBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -177,66 +176,115 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTNActionPerformed
         // get info from all fields
-	sessionManager.sessionUsername = nameTXT.getText();
-	sessionManager.sessionUserPassword = String.valueOf(pwdTXT.getPassword());
+	    sessionManager.sessionUsername = nameTXT.getText();
+    	sessionManager.sessionUserPassword = String.valueOf(pwdTXT.getPassword());
 	
-	// sql queries to check name and password
-	String teacherQuery = "SELECT name,password,id FROM teachers "
-			    + "WHERE name=\'" + sessionManager.sessionUsername + "\'"
-			    + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
-	String studentQuery = "SELECT name,password,id FROM students "
-			    + "WHERE name=\'" + sessionManager.sessionUsername + "\'"
-			    + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
+	    // sql queries to check name and password
+    	String teacherQuery = "SELECT name,password,id FROM teachers "
+	    	        	    + "WHERE name=\'" + sessionManager.sessionUsername + "\'"
+		    	            + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
+    	String studentQuery = "SELECT name,password,id FROM students "
+		    	            + "WHERE name=\'" + sessionManager.sessionUsername + "\'"
+                            + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
 
-	// boolean to keep track of failed of successful login attempt
-	boolean success  = false, isTeacher = false;
+    	// boolean to keep track of failed of successful login attempt
+	    boolean success  = false;
+	    sessionManager.isTeacher = false;
 
-	// cacthing the sql exception
-	try {
-		// boilerplate code
-		Connection conn = DriverManager.getConnection(sessionManager.databaseURL);
-		Statement stmt = conn.createStatement();
+	    // cacthing the sql exception
+	    try {
+		    // boilerplate code
+		    Connection conn = DriverManager.getConnection(sessionManager.databaseURL);
+		    Statement stmt = conn.createStatement();
 		
-		// get result from studentQuery
-		ResultSet rs = stmt.executeQuery(studentQuery);
+		    // get result from studentQuery
+		    ResultSet rs = stmt.executeQuery(studentQuery);
 
-		// There should be a single match, no need to check here again as SQL already checked
-		if (rs.next()) {
-			success = true;
-			sessionManager.sessionUserID = rs.getString("id");
-		} else {
-			rs = stmt.executeQuery(teacherQuery);
-			if (rs.next()) {
-				success = true;
-                                isTeacher = true;
-				sessionManager.isTeacher = true;
-                sessionManager.sessionUserID = rs.getString("id");
+		    // There should be a single match, no need to check here again as SQL already checked
+		    if (rs.next()) {
+			    success = true;
+				sessionManager.sessionUserID = rs.getString("id");
+			} else {
+				rs = stmt.executeQuery(teacherQuery);
+				if (rs.next()) {
+					success = true;
+					sessionManager.isTeacher = true;
+	                sessionManager.sessionUserID = rs.getString("id");
+				}
 			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
 		}
-	} catch (SQLException e) {
-		System.out.println(e.getMessage());
-	}
-	
-	if (success) {
-                // new frame's code goes here @Ishan Kumar Kaler
-		System.out.println("Login Success");
-                if(isTeacher){
-                    teacherHome teacher = new teacherHome();
-                    teacher.setVisible(success);
-                }
-                else{
-                    studentHome student = new studentHome();
-                    student.setVisible(success);
-                }
 
-	} else {
-		// clear all fields
-		pwdTXT.setText(null);
-		nameTXT.setText(null);
+		if (success) {
+	        // tell user
+			System.out.println("Login Success");
+            JOptionPane.showMessageDialog(rootPane, "Login Successful!");
 
-		// show failed login
-		JOptionPane.showMessageDialog(rootPane, "Login Failed!");
-	}
+			// different frame for teacher
+			if (sessionManager.isTeacher) {
+			    teacherHome teacher = new teacherHome();
+			    teacher.setVisible(success);
+			} else {
+			    studentHome student = new studentHome();
+			    student.setVisible(success);
+
+                String courseListQuery = "SELECT * FROM courses;";
+                String courseQuery;
+
+                try {
+                    // boilerplate code
+                    Connection conn = DriverManager.getConnection(sessionManager.databaseURL);
+                    Statement stmt = conn.createStatement();
+
+                    // get table model
+                    DefaultTableModel model = (DefaultTableModel) student.courseTable.getModel();
+
+                    // fetching all tables of all courses
+                    ResultSet rs = stmt.executeQuery(courseListQuery);
+
+                    // ResultSet for each course table
+                    ResultSet course_rs;
+
+                    int courseID, courseTeacher;
+                    String courseName, courseSemester;
+
+                    // looping the the list, putting entries in courseTable
+                    // TODO: Multithread this part
+                    while (rs.next()) {
+                        // querying the database whether student present in this course or not
+                        courseID = rs.getInt("id");
+                        courseName = rs.getString("name");
+                        courseTeacher = rs.getInt("teacher");
+                        courseSemester = rs.getString("semester");
+                        
+                        courseQuery = "SELECT * FROM \'" + courseName + " " + courseID + "\'"
+                                + " WHERE student_id = \'" + sessionManager.sessionUserID + "\';";
+                        course_rs = stmt.executeQuery(courseQuery);
+
+                        // if yes, add that course to the table
+                        if (course_rs.next()) {
+                            model.addRow(new Object[]{
+                                    courseID, courseName, courseTeacher, courseSemester
+                            });
+                        }
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+            // this frame is no longer needed
+			setVisible(false);
+			dispose();
+		} else {
+			// clear all fields
+			pwdTXT.setText(null);
+			nameTXT.setText(null);
+
+			// show failed login
+			JOptionPane.showMessageDialog(rootPane, "Login Failed!");
+		}
     }//GEN-LAST:event_loginBTNActionPerformed
 
     private void nameTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTXTActionPerformed

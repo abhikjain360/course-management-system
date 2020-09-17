@@ -36,10 +36,7 @@ public class teacherHome extends javax.swing.JFrame {
 
         courseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Name", "Password", "Join Year", "Courses"
@@ -53,7 +50,9 @@ public class teacherHome extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        courseTable.setColumnSelectionAllowed(true);
         jScrollPane1.setViewportView(courseTable);
+        courseTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         addCourseBTN.setBackground(new java.awt.Color(1, 188, 235));
         addCourseBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
@@ -81,29 +80,28 @@ public class teacherHome extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(addCourseBTN)
-                .addGap(36, 36, 36)
-                .addComponent(removeCourseBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutBTN)
-                .addGap(33, 33, 33))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(addCourseBTN)
+                        .addGap(36, 36, 36)
+                        .addComponent(removeCourseBTN)
+                        .addGap(36, 36, 36)
+                        .addComponent(logoutBTN)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addCourseBTN)
                     .addComponent(removeCourseBTN)
                     .addComponent(logoutBTN))
-                .addGap(56, 56, 56))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();

@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-import javax.swing.table.TableModel;
+// imports for table
+import javax.swing.table.DefaultTableModel;
 
 // imports for database
 import java.sql.Connection;
@@ -24,10 +25,10 @@ public class sessionManager {
     static boolean isTeacher;
 
     // url for jdbc to connect to
-    static String databaseURL = "jdbc:sqlite:C:\\Users\\kumar\\OneDrive\\Documents\\java\\course-management-system\\db\\cms.db";
+    static String databaseURL = "jdbc:sqlite:/home/abhik/Desktop/oop2/netbreans/course-management-system/db/cms.db";
 
     //
-    static void setStudentTable(TableModel model) {
+    static void setStudentTable(DefaultTableModel model) {
         // The query to fetch all courses;
         String courseListQuery = "SELECT * FROM courses;";
         String courseQuery, tableName;
@@ -46,23 +47,26 @@ public class sessionManager {
             // Counter to keep track of the last edited index
             int counter = 0;
 
-            int courseID;
+            int courseID, courseTeacher;
+            String courseName, courseSemester;
 
             // looping the the list, putting entries in courseTable
             // TODO: Multithread this part
             while (rs.next()) {
                 // querying the database whether student present in this course or not
                 courseID = rs.getInt("id");
-                courseQuery = "SELECT * FROM " + courseID
-                        + " WHERE student_id = \'" + sessionManager.sessionUserID + "\';";
+                courseName = rs.getString("name");
+                courseTeacher = rs.getInt("teacher");
+                courseSemester = rs.getString("semester");
+                courseQuery = "SELECT * FROM \'" + courseName + " " + courseID + "\'"
+                            + " WHERE student_id = \'" + sessionManager.sessionUserID + "\';";
                 course_rs = stmt.executeQuery(courseQuery);
 
                 // if yes, add that course to the table
                 if (course_rs.next()) {
-                    model.setValueAt(courseID, counter, 0);
-                    model.setValueAt(rs.getString("name"), counter, 1);
-                    model.setValueAt(rs.getInt("teacher"), counter, 2);
-                    model.setValueAt(rs.getString("semester"), counter, 3);
+                    model.addRow(new Object[]{
+                            courseID, courseName, courseTeacher, courseSemester
+                    });
 
                     // increment the counter for next row
                     counter++;
@@ -73,7 +77,7 @@ public class sessionManager {
         }
     }
 
-    static void setTeacherTable(TableModel model) {
+    static void setTeacherTable(DefaultTableModel model) {
         // The query to fetch all courses;
         String courseListQuery = "SELECT * FROM courses;";
         String courseQuery, tableName;
