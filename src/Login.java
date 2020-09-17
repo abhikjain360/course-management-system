@@ -212,9 +212,10 @@ public class Login extends javax.swing.JFrame {
 	}
 	
 	if (success) {
+                // new frame's code goes here @Ishan Kumar Kaler
 		System.out.println("Login Success");
-
-		// new frame's code goes here @Ishan Kumar Kaler
+                teacherHome teacher = new teacherHome();
+                teacher.setVisible(success);
 
 	} else {
 		// clear all fields
