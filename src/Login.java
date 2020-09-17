@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        headLabel.setBackground(java.awt.Color.white);
+        headLabel.setBackground(java.awt.Color.black);
         headLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         headLabel.setForeground(java.awt.Color.black);
         headLabel.setText("Course Management System");
@@ -84,6 +84,9 @@ public class Login extends javax.swing.JFrame {
         loginBTN.setFont(new java.awt.Font("FreeMono", 1, 15)); // NOI18N
         loginBTN.setText("Login");
         loginBTN.setBorderPainted(false);
+        loginBTN.setMaximumSize(new java.awt.Dimension(45, 26));
+        loginBTN.setMinimumSize(new java.awt.Dimension(45, 26));
+        loginBTN.setPreferredSize(new java.awt.Dimension(45, 26));
         loginBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBTNActionPerformed(evt);
@@ -95,6 +98,9 @@ public class Login extends javax.swing.JFrame {
         exitBTN.setForeground(java.awt.Color.black);
         exitBTN.setText("Exit");
         exitBTN.setBorderPainted(false);
+        exitBTN.setMaximumSize(new java.awt.Dimension(45, 26));
+        exitBTN.setMinimumSize(new java.awt.Dimension(45, 26));
+        exitBTN.setPreferredSize(new java.awt.Dimension(45, 26));
         exitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBTNActionPerformed(evt);
@@ -109,37 +115,34 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(nameLabel)
-                        .addGap(43, 43, 43)
-                        .addComponent(nameTXT))
+                        .addComponent(pwdLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(headLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(nameLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(pwdLabel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(clearBTN)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(exitBTN)
-                                .addGap(27, 27, 27))
-                            .addComponent(pwdTXT))))
+                        .addGap(49, 49, 49)
+                        .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 18, Short.MAX_VALUE))
+                    .addComponent(nameTXT)
+                    .addComponent(pwdTXT))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(headLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(headLabel)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
                     .addComponent(nameTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,14 +151,14 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(pwdLabel)
                     .addComponent(pwdTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(exitBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(1, 1, 1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(exitBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -184,7 +187,7 @@ public class Login extends javax.swing.JFrame {
 			    + "AND password=\'" + sessionManager.sessionUserPassword + "\';";
 
 	// boolean to keep track of failed of successful login attempt
-	boolean success  = false;
+	boolean success  = false, isTeacher = false;
 
 	// cacthing the sql exception
 	try {
@@ -203,6 +206,7 @@ public class Login extends javax.swing.JFrame {
 			rs = stmt.executeQuery(teacherQuery);
 			if (rs.next()) {
 				success = true;
+                                isTeacher = true;
 				sessionManager.isTeacher = true;
                 sessionManager.sessionUserID = rs.getString("id");
 			}
@@ -214,8 +218,14 @@ public class Login extends javax.swing.JFrame {
 	if (success) {
                 // new frame's code goes here @Ishan Kumar Kaler
 		System.out.println("Login Success");
-                teacherHome teacher = new teacherHome();
-                teacher.setVisible(success);
+                if(isTeacher){
+                    teacherHome teacher = new teacherHome();
+                    teacher.setVisible(success);
+                }
+                else{
+                    studentHome student = new studentHome();
+                    student.setVisible(success);
+                }
 
 	} else {
 		// clear all fields
