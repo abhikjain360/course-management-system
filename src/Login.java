@@ -40,6 +40,7 @@ public class Login extends javax.swing.JFrame {
 
         jColorChooser1 = new javax.swing.JColorChooser();
         jColorChooser2 = new javax.swing.JColorChooser();
+        jColorChooser3 = new javax.swing.JColorChooser();
         headLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         pwdLabel = new javax.swing.JLabel();
@@ -57,12 +58,12 @@ public class Login extends javax.swing.JFrame {
         headLabel.setText("Course Management System");
 
         nameLabel.setBackground(java.awt.Color.gray);
-        nameLabel.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         nameLabel.setForeground(java.awt.Color.black);
         nameLabel.setText("Enter Name");
 
         pwdLabel.setBackground(java.awt.Color.white);
-        pwdLabel.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        pwdLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         pwdLabel.setForeground(java.awt.Color.black);
         pwdLabel.setText("Enter Password");
 
@@ -131,7 +132,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(loginBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 25, Short.MAX_VALUE))
+                        .addGap(0, 8, Short.MAX_VALUE))
                     .addComponent(nameTXT)
                     .addComponent(pwdTXT, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -168,7 +169,7 @@ public class Login extends javax.swing.JFrame {
     private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitBTNActionPerformed
-
+    
     private void clearBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBTNActionPerformed
         nameTXT.setText(null);
         pwdTXT.setText(null);
@@ -321,7 +322,7 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Login().setVisible(true);   
             }
         });
     }
@@ -332,6 +333,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel headLabel;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JColorChooser jColorChooser2;
+    private javax.swing.JColorChooser jColorChooser3;
     private javax.swing.JButton loginBTN;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTXT;

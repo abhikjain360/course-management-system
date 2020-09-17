@@ -6,6 +6,8 @@
     </Component>
     <Component class="javax.swing.JColorChooser" name="jColorChooser2">
     </Component>
+    <Component class="javax.swing.JColorChooser" name="jColorChooser3">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -50,7 +52,7 @@
                       <Component id="loginBTN" min="-2" pref="76" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="exitBTN" min="-2" pref="59" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                   </Group>
                   <Component id="nameTXT" max="32767" attributes="0"/>
                   <Component id="pwdTXT" alignment="1" max="32767" attributes="0"/>
@@ -113,7 +115,7 @@
           <Color blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="14" style="1"/>
+          <Font name="Verdana" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
@@ -127,7 +129,7 @@
           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="14" style="1"/>
+          <Font name="Verdana" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
