@@ -24,7 +24,7 @@ public class sessionManager {
     static boolean isTeacher;
 
     // url for jdbc to connect to
-    static String databaseURL = "jdbc:sqlite:/home/abhik/Desktop/oop2/netbreans/course-management-system/db/cms.db";
+    static String databaseURL = "jdbc:sqlite:C:\\Users\\kumar\\OneDrive\\Documents\\java\\course-management-system\\db\\cms.db";
 
     //
     static void setStudentTable(TableModel model) {
