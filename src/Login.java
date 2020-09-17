@@ -37,6 +37,8 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jColorChooser1 = new javax.swing.JColorChooser();
+        jColorChooser2 = new javax.swing.JColorChooser();
         headLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         pwdLabel = new javax.swing.JLabel();
@@ -53,7 +55,7 @@ public class Login extends javax.swing.JFrame {
         headLabel.setForeground(java.awt.Color.black);
         headLabel.setText("Course Management System");
 
-        nameLabel.setBackground(java.awt.Color.white);
+        nameLabel.setBackground(java.awt.Color.gray);
         nameLabel.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         nameLabel.setForeground(java.awt.Color.black);
         nameLabel.setText("Enter Name");
@@ -280,6 +282,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton clearBTN;
     private javax.swing.JButton exitBTN;
     private javax.swing.JLabel headLabel;
+    private javax.swing.JColorChooser jColorChooser1;
+    private javax.swing.JColorChooser jColorChooser2;
     private javax.swing.JButton loginBTN;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTXT;
