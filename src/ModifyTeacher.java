@@ -336,10 +336,10 @@ public class ModifyTeacher extends javax.swing.JFrame {
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
-            
+
             String query = "UPDATE teacher ";
             int count = 0;
-            
+
             if (nameRB.isSelected()) {
                 String name = nameTXT.getText();
                 query += "SET name = \'" + name + "\' ";
@@ -347,66 +347,72 @@ public class ModifyTeacher extends javax.swing.JFrame {
             }
             if (passwordRB.isSelected()) {
                 String password = passwordTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "password = \'" + password + "\' ";
                 count += 1;
             }
             if (idRB.isSelected()) {
                 int id = Integer.parseInt(idTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "id = " + id + " ";
                 count += 1;
             }
             if (emailRB.isSelected()) {
                 String email = emailTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "email = \'" + email + "\' ";
                 count += 1;
             }
             if (phoneRB.isSelected()) {
                 long phone = Long.parseLong(phoneTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "phone = " + phone + " ";
                 count += 1;
             }
             if (salaryRB.isSelected()) {
                 float salary = Float.parseFloat(salaryTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "salary = " + salary + " ";
                 count += 1;
             }
             if (deptRB.isSelected()) {
                 int dept = Integer.parseInt(deptTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "dept = " + dept + " ";
             }
-            
+
             query += "WHERE id = " + SessionManager.idToChange + ";";
 
             count = stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
-            
+
             this.setVisible(false);
             this.dispose();
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

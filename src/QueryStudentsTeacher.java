@@ -163,14 +163,14 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nameRB)
-                    .addComponent(idRB)
-                    .addComponent(gradeRB)
-                    .addComponent(emailRB)
-                    .addComponent(phoneRB)
-                    .addComponent(yearRB)
-                    .addComponent(passwordRB))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(passwordRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(yearRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(phoneRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emailRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gradeRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nameRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(passwordTXT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
@@ -273,19 +273,13 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(97, 97, 97)
-                                .addComponent(backButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(clearButton)
-                                    .addComponent(searchButton)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(clearButton1)))
-                        .addGap(0, 236, Short.MAX_VALUE))
+                        .addGap(84, 84, 84)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(clearButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 156, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -297,13 +291,13 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(116, 116, 116)
                         .addComponent(searchButton)
-                        .addGap(32, 32, 32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(backButton)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearButton)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearButton1)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,10 +367,11 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-        
+
         int rc = model.getRowCount();
-        for (int i = 0; i < rc; ++i)
-            model.removeRow(0); 
+        for (int i = 0; i < rc; ++i) {
+            model.removeRow(0);
+        }
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -392,55 +387,61 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
             }
             if (passwordRB.isSelected()) {
                 String password = passwordTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "password = \'" + password + "\' ";
                 count += 1;
             }
             if (idRB.isSelected()) {
                 int id = Integer.parseInt(idTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "id = " + id + " ";
                 count += 1;
             }
             if (emailRB.isSelected()) {
                 String email = emailTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "email = \'" + email + "\' ";
                 count += 1;
             }
             if (phoneRB.isSelected()) {
                 long phone = Long.parseLong(phoneTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "phone = " + phone + " ";
                 count += 1;
             }
             if (gradeRB.isSelected()) {
                 float grade = Float.parseFloat(gradeTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "salary = " + grade + " ";
                 count += 1;
             }
             if (yearRB.isSelected()) {
                 int year = Integer.parseInt(yearTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "dept = " + year + " ";
             }
 
@@ -457,7 +458,7 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
                 long phone = rs.getLong("phone");
                 int year = rs.getInt("join_year");
 
-                model.addRow(new Object[] {name, password, id, grade, email, phone, year});
+                model.addRow(new Object[]{name, password, id, grade, email, phone, year});
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
@@ -488,7 +489,7 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         int rc = model.getRowCount();
         for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+            model.removeRow(0);
     }//GEN-LAST:event_clearButton1ActionPerformed
 
     /**

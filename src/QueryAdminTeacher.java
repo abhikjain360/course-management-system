@@ -319,8 +319,9 @@ public class QueryAdminTeacher extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
 
         int rc = model.getRowCount();
-        for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+        for (int i = 0; i < rc; ++i) {
+            model.removeRow(0);
+        }
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -336,28 +337,31 @@ public class QueryAdminTeacher extends javax.swing.JFrame {
             }
             if (idRB.isSelected()) {
                 int id = Integer.parseInt(idTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "id = " + id + " ";
                 count += 1;
             }
             if (emailRB.isSelected()) {
                 String email = emailTXT.getText();
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "email = \'" + email + "\' ";
                 count += 1;
             }
             if (phoneRB.isSelected()) {
                 long phone = Long.parseLong(phoneTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "phone = " + phone + " ";
                 count += 1;
             }
@@ -372,7 +376,7 @@ public class QueryAdminTeacher extends javax.swing.JFrame {
                 String email = rs.getString("email");
                 long phone = rs.getLong("phone");
 
-                model.addRow(new Object[] {name, id, email, phone});
+                model.addRow(new Object[]{name, id, email, phone});
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
@@ -385,7 +389,7 @@ public class QueryAdminTeacher extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         int rc = model.getRowCount();
         for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+            model.removeRow(0);
     }//GEN-LAST:event_clearButton1ActionPerformed
 
     /**

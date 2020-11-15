@@ -266,15 +266,16 @@ public class QueryDeptsAdmin extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         int rc = model.getRowCount();
         for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+            model.removeRow(0);
     }//GEN-LAST:event_clearButton1ActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
         int rc = model.getRowCount();
-        for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+        for (int i = 0; i < rc; ++i) {
+            model.removeRow(0);
+        }
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -290,14 +291,15 @@ public class QueryDeptsAdmin extends javax.swing.JFrame {
             }
             if (idRB.isSelected()) {
                 int id = Integer.parseInt(idTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "id = " + id + " ";
                 count += 1;
             }
-            
+
             query += ";";
 
             ResultSet rs = stmt.executeQuery(query);
@@ -306,7 +308,7 @@ public class QueryDeptsAdmin extends javax.swing.JFrame {
                 String name = rs.getString("name");
                 int id = rs.getInt("id");
 
-                model.addRow(new Object[] {id, name});
+                model.addRow(new Object[]{id, name});
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
