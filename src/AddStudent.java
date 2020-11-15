@@ -56,6 +56,7 @@ public class AddStudent extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel1.setText("Student Name");
 
@@ -69,22 +70,32 @@ public class AddStudent extends javax.swing.JFrame {
 
         jLabel6.setText("Phone");
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorderPainted(false);
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
 
+        addButton.setBackground(new java.awt.Color(255, 69, 0));
+        addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorderPainted(false);
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
 
+        backButton.setBackground(new java.awt.Color(255, 69, 0));
+        backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorderPainted(false);
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -118,7 +129,7 @@ public class AddStudent extends javax.swing.JFrame {
                 .addComponent(backButton)
                 .addGap(109, 109, 109)
                 .addComponent(clearButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addComponent(addButton)
                 .addGap(107, 107, 107))
         );
@@ -154,7 +165,7 @@ public class AddStudent extends javax.swing.JFrame {
                     .addComponent(clearButton)
                     .addComponent(addButton)
                     .addComponent(backButton))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();

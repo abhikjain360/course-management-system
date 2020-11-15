@@ -50,51 +50,84 @@ public class TeacherHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        logoutBTN.setForeground(new java.awt.Color(255, 0, 0));
+        logoutBTN.setBackground(new java.awt.Color(255, 69, 0));
+        logoutBTN.setForeground(java.awt.Color.white);
         logoutBTN.setText("LOGOUT");
+        logoutBTN.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        logoutBTN.setBorderPainted(false);
+        logoutBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logoutBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutBTNActionPerformed(evt);
             }
         });
 
-        ExitButton.setForeground(new java.awt.Color(255, 0, 0));
+        ExitButton.setBackground(new java.awt.Color(255, 69, 0));
+        ExitButton.setForeground(java.awt.Color.white);
         ExitButton.setText("EXIT");
+        ExitButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ExitButton.setBorderPainted(false);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitButtonActionPerformed(evt);
             }
         });
 
+        newCourseButton.setBackground(new java.awt.Color(255, 69, 0));
+        newCourseButton.setForeground(java.awt.Color.white);
         newCourseButton.setText("Add New Course");
+        newCourseButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        newCourseButton.setBorderPainted(false);
+        newCourseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         newCourseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newCourseButtonActionPerformed(evt);
             }
         });
 
+        queryCourses.setBackground(new java.awt.Color(255, 69, 0));
+        queryCourses.setForeground(java.awt.Color.white);
         queryCourses.setText("Query Courses");
+        queryCourses.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        queryCourses.setBorderPainted(false);
+        queryCourses.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         queryCourses.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 queryCoursesActionPerformed(evt);
             }
         });
 
+        queryDeptsButton.setBackground(new java.awt.Color(255, 69, 0));
+        queryDeptsButton.setForeground(java.awt.Color.white);
         queryDeptsButton.setText("Query Depts");
+        queryDeptsButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        queryDeptsButton.setBorderPainted(false);
+        queryDeptsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         queryDeptsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 queryDeptsButtonActionPerformed(evt);
             }
         });
 
+        queryStudentsButton.setBackground(new java.awt.Color(255, 69, 0));
+        queryStudentsButton.setForeground(java.awt.Color.white);
         queryStudentsButton.setText("Query Students");
+        queryStudentsButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        queryStudentsButton.setBorderPainted(false);
+        queryStudentsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         queryStudentsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 queryStudentsButtonActionPerformed(evt);
             }
         });
 
+        queryTeacherButton.setBackground(new java.awt.Color(255, 69, 0));
+        queryTeacherButton.setForeground(java.awt.Color.white);
         queryTeacherButton.setText("Query Teachers");
+        queryTeacherButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        queryTeacherButton.setBorderPainted(false);
+        queryTeacherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         queryTeacherButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 queryTeacherButtonActionPerformed(evt);
@@ -132,7 +165,7 @@ public class TeacherHome extends javax.swing.JFrame {
                 .addComponent(queryStudentsButton)
                 .addGap(18, 18, 18)
                 .addComponent(queryTeacherButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutBTN)
                     .addComponent(ExitButton))

@@ -173,17 +173,28 @@ public class ModifyCourses extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorderPainted(false);
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
 
+        cancelButton.setBackground(new java.awt.Color(255, 69, 0));
+        cancelButton.setForeground(java.awt.Color.white);
         cancelButton.setText("CANCEL");
+        cancelButton.setBorderPainted(false);
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        changeButton.setBackground(new java.awt.Color(255, 69, 0));
+        changeButton.setForeground(java.awt.Color.white);
         changeButton.setText("CHANGE");
+        changeButton.setBorderPainted(false);
+        changeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         changeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changeButtonActionPerformed(evt);

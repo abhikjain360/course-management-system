@@ -67,6 +67,8 @@ public class QueryCoursesTeacher extends javax.swing.JFrame {
         modifyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 69, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         deptTXT.setEditable(false);
 
@@ -183,22 +185,36 @@ public class QueryCoursesTeacher extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearButton.setBorderPainted(false);
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
 
+        searchButton.setBackground(new java.awt.Color(255, 69, 0));
+        searchButton.setForeground(java.awt.Color.white);
         searchButton.setText("SEARCH");
+        searchButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        searchButton.setBorderPainted(false);
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
             }
         });
 
+        backButton.setBackground(new java.awt.Color(255, 69, 0));
+        backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backButton.setBorderPainted(false);
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -233,22 +249,36 @@ public class QueryCoursesTeacher extends javax.swing.JFrame {
         jScrollPane1.setViewportView(table);
         table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        clearButton1.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton1.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton1.setForeground(java.awt.Color.white);
         clearButton1.setText("CLEAR TABLE");
+        clearButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearButton1.setBorderPainted(false);
+        clearButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButton1ActionPerformed(evt);
             }
         });
 
+        enrolledButton.setBackground(new java.awt.Color(255, 69, 0));
+        enrolledButton.setForeground(java.awt.Color.white);
         enrolledButton.setText("See Students Enrolled");
+        enrolledButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        enrolledButton.setBorderPainted(false);
+        enrolledButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         enrolledButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enrolledButtonActionPerformed(evt);
             }
         });
 
+        modifyButton.setBackground(new java.awt.Color(255, 69, 0));
+        modifyButton.setForeground(java.awt.Color.white);
         modifyButton.setText("MODIFY");
+        modifyButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modifyButton.setBorderPainted(false);
+        modifyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modifyButtonActionPerformed(evt);

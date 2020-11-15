@@ -105,22 +105,33 @@ public class ModifyDept extends javax.swing.JFrame {
 
         jLabel1.setText("Select value to change:");
 
+        changeButton.setBackground(new java.awt.Color(255, 69, 0));
+        changeButton.setForeground(java.awt.Color.white);
         changeButton.setText("CHANGE");
+        changeButton.setBorderPainted(false);
+        changeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         changeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changeButtonActionPerformed(evt);
             }
         });
 
+        cancelButton.setBackground(new java.awt.Color(255, 69, 0));
+        cancelButton.setForeground(java.awt.Color.white);
         cancelButton.setText("CANCEL");
+        cancelButton.setBorderPainted(false);
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorderPainted(false);
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
@@ -160,7 +171,7 @@ public class ModifyDept extends javax.swing.JFrame {
                     .addComponent(changeButton)
                     .addComponent(cancelButton)
                     .addComponent(clearButton))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();

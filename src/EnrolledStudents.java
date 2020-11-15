@@ -101,21 +101,33 @@ public class EnrolledStudents extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
 
+        cancelButton.setBackground(new java.awt.Color(255, 69, 0));
+        cancelButton.setForeground(java.awt.Color.white);
         cancelButton.setText("CANCEL");
+        cancelButton.setBorderPainted(false);
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
+        removeButton.setBackground(new java.awt.Color(255, 69, 0));
+        removeButton.setForeground(java.awt.Color.white);
         removeButton.setText("Remove Students");
+        removeButton.setBorderPainted(false);
+        removeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeButtonActionPerformed(evt);
             }
         });
 
+        gradeButton.setBackground(new java.awt.Color(255, 69, 0));
+        gradeButton.setForeground(java.awt.Color.white);
         gradeButton.setText("Change Grade");
+        gradeButton.setBorderPainted(false);
+        gradeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gradeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gradeButtonActionPerformed(evt);
@@ -148,7 +160,7 @@ public class EnrolledStudents extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(231, Short.MAX_VALUE)
+                .addContainerGap(243, Short.MAX_VALUE)
                 .addComponent(gradeButton)
                 .addGap(71, 71, 71)
                 .addComponent(removeButton)

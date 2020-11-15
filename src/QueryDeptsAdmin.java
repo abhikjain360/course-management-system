@@ -106,37 +106,60 @@ public class QueryDeptsAdmin extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        backButton.setBackground(new java.awt.Color(255, 69, 0));
+        backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backButton.setBorderPainted(false);
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearButton.setBorderPainted(false);
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
 
-        clearButton1.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton1.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton1.setForeground(java.awt.Color.white);
         clearButton1.setText("CLEAR TABLE");
+        clearButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clearButton1.setBorderPainted(false);
+        clearButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButton1ActionPerformed(evt);
             }
         });
 
+        searchButton.setBackground(new java.awt.Color(255, 69, 0));
+        searchButton.setForeground(java.awt.Color.white);
         searchButton.setText("SEARCH");
+        searchButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        searchButton.setBorderPainted(false);
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
             }
         });
 
+        modifyButton.setBackground(new java.awt.Color(255, 69, 0));
+        modifyButton.setForeground(java.awt.Color.white);
         modifyButton.setText("Modify Selected Row");
+        modifyButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modifyButton.setBorderPainted(false);
+        modifyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modifyButtonActionPerformed(evt);
@@ -194,7 +217,7 @@ public class QueryDeptsAdmin extends javax.swing.JFrame {
                                         .addGap(17, 17, 17)
                                         .addComponent(clearButton))
                                     .addComponent(clearButton1))))
-                        .addGap(0, 33, Short.MAX_VALUE)))
+                        .addGap(0, 37, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

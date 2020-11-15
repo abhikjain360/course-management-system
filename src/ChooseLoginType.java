@@ -47,6 +47,7 @@ public class ChooseLoginType extends javax.swing.JFrame {
         ExitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(java.awt.Color.darkGray);
 
         buttonGroup1.add(StudentRadioButton);
         StudentRadioButton.setText("Student");
@@ -88,15 +89,22 @@ public class ChooseLoginType extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         jLabel1.setText("Choose Login Type :");
 
+        jButton1.setBackground(new java.awt.Color(255, 69, 0));
+        jButton1.setForeground(java.awt.Color.white);
         jButton1.setText("CHOOSE");
+        jButton1.setBorderPainted(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        ExitButton.setForeground(new java.awt.Color(255, 0, 0));
+        ExitButton.setBackground(new java.awt.Color(255, 69, 0));
+        ExitButton.setForeground(java.awt.Color.white);
         ExitButton.setText("EXIT");
+        ExitButton.setBorderPainted(false);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitButtonActionPerformed(evt);

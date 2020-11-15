@@ -62,7 +62,11 @@ public class AddTeacher extends javax.swing.JFrame {
 
         jLabel4.setText("Teacher ID");
 
+        addButton.setBackground(new java.awt.Color(255, 69, 0));
+        addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorderPainted(false);
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
@@ -71,7 +75,11 @@ public class AddTeacher extends javax.swing.JFrame {
 
         jLabel5.setText("Email");
 
+        backButton.setBackground(new java.awt.Color(255, 69, 0));
+        backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorderPainted(false);
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -84,8 +92,11 @@ public class AddTeacher extends javax.swing.JFrame {
 
         jLabel2.setText("Teacher Password");
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorderPainted(false);
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
@@ -179,7 +190,7 @@ public class AddTeacher extends javax.swing.JFrame {
                     .addComponent(clearButton)
                     .addComponent(addButton)
                     .addComponent(backButton))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();

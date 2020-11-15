@@ -54,33 +54,55 @@ public class AddCourseAdmin extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(java.awt.Color.darkGray);
 
+        jLabel1.setBackground(java.awt.Color.darkGray);
+        jLabel1.setForeground(java.awt.Color.lightGray);
         jLabel1.setText("Course ID");
 
+        jLabel2.setBackground(java.awt.Color.darkGray);
+        jLabel2.setForeground(java.awt.Color.lightGray);
         jLabel2.setText("Course Name");
 
+        jLabel3.setBackground(java.awt.Color.darkGray);
+        jLabel3.setForeground(java.awt.Color.lightGray);
         jLabel3.setText("Pre-Req Course ID");
 
+        jLabel4.setBackground(java.awt.Color.darkGray);
+        jLabel4.setForeground(java.awt.Color.lightGray);
         jLabel4.setText("Course Teacher ID");
 
+        jLabel5.setBackground(java.awt.Color.darkGray);
+        jLabel5.setForeground(java.awt.Color.lightGray);
         jLabel5.setText("Course Dept");
 
+        addButton.setBackground(new java.awt.Color(255, 69, 0));
+        addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorderPainted(false);
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
 
-        clearButton.setForeground(new java.awt.Color(255, 0, 0));
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
+        clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorderPainted(false);
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
 
+        backButton.setBackground(new java.awt.Color(255, 69, 0));
+        backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorderPainted(false);
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -152,7 +174,7 @@ public class AddCourseAdmin extends javax.swing.JFrame {
                     .addComponent(clearButton)
                     .addComponent(addButton)
                     .addComponent(backButton))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();

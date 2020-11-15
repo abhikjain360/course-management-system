@@ -195,6 +195,7 @@ public class ModifyTeacher extends javax.swing.JFrame {
 
         jLabel1.setText("Select value to change:");
 
+        changeButton.setBackground(new java.awt.Color(255, 69, 0));
         changeButton.setText("CHANGE");
         changeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,6 +203,7 @@ public class ModifyTeacher extends javax.swing.JFrame {
             }
         });
 
+        cancelButton.setBackground(new java.awt.Color(255, 69, 0));
         cancelButton.setText("CANCEL");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +211,7 @@ public class ModifyTeacher extends javax.swing.JFrame {
             }
         });
 
+        clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(new java.awt.Color(255, 0, 0));
         clearButton.setText("CLEAR");
         clearButton.addActionListener(new java.awt.event.ActionListener() {

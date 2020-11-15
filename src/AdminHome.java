@@ -60,16 +60,22 @@ public class AdminHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        logoutBTN.setForeground(new java.awt.Color(255, 0, 0));
+        logoutBTN.setBackground(new java.awt.Color(255, 69, 0));
+        logoutBTN.setForeground(java.awt.Color.white);
         logoutBTN.setText("LOGOUT");
+        logoutBTN.setBorderPainted(false);
+        logoutBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logoutBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutBTNActionPerformed(evt);
             }
         });
 
-        ExitButton.setForeground(new java.awt.Color(255, 0, 0));
+        ExitButton.setBackground(new java.awt.Color(255, 69, 0));
+        ExitButton.setForeground(java.awt.Color.white);
         ExitButton.setText("EXIT");
+        ExitButton.setBorderPainted(false);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitButtonActionPerformed(evt);
@@ -254,7 +260,7 @@ public class AdminHome extends javax.swing.JFrame {
                     .addComponent(queryCourses))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(queryAdmins)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutBTN)
                     .addComponent(ExitButton))

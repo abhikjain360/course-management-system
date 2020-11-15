@@ -48,37 +48,60 @@ public class StudentHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        joinedCourcesButton.setBackground(new java.awt.Color(255, 69, 0));
+        joinedCourcesButton.setForeground(java.awt.Color.white);
         joinedCourcesButton.setText("Joined Courses");
+        joinedCourcesButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        joinedCourcesButton.setBorderPainted(false);
+        joinedCourcesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         joinedCourcesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinedCourcesButtonActionPerformed(evt);
             }
         });
 
+        joinNewCourseButton.setBackground(new java.awt.Color(255, 69, 0));
+        joinNewCourseButton.setForeground(java.awt.Color.white);
         joinNewCourseButton.setText("Join New Course");
+        joinNewCourseButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        joinNewCourseButton.setBorderPainted(false);
+        joinNewCourseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         joinNewCourseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinNewCourseButtonActionPerformed(evt);
             }
         });
 
+        totalGradeButton.setBackground(new java.awt.Color(255, 69, 0));
+        totalGradeButton.setForeground(java.awt.Color.white);
         totalGradeButton.setText("Current Total Grade");
+        totalGradeButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        totalGradeButton.setBorderPainted(false);
+        totalGradeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         totalGradeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalGradeButtonActionPerformed(evt);
             }
         });
 
-        logoutBTN.setForeground(new java.awt.Color(255, 0, 0));
+        logoutBTN.setBackground(new java.awt.Color(255, 69, 0));
+        logoutBTN.setForeground(java.awt.Color.white);
         logoutBTN.setText("LOGOUT");
+        logoutBTN.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        logoutBTN.setBorderPainted(false);
+        logoutBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logoutBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutBTNActionPerformed(evt);
             }
         });
 
-        ExitButton.setForeground(new java.awt.Color(255, 0, 0));
+        ExitButton.setBackground(new java.awt.Color(255, 69, 0));
+        ExitButton.setForeground(java.awt.Color.white);
         ExitButton.setText("EXIT");
+        ExitButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ExitButton.setBorderPainted(false);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitButtonActionPerformed(evt);
@@ -98,7 +121,7 @@ public class StudentHome extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(joinedCourcesButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(joinNewCourseButton)
                 .addGap(37, 37, 37))
             .addGroup(layout.createSequentialGroup()
@@ -115,7 +138,7 @@ public class StudentHome extends javax.swing.JFrame {
                     .addComponent(joinedCourcesButton))
                 .addGap(18, 18, 18)
                 .addComponent(totalGradeButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutBTN)
                     .addComponent(ExitButton))
