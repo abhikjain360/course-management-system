@@ -126,29 +126,21 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(teacherRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statusRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deptRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prereqRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nameRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(idRB)
-                        .addGap(130, 130, 130)
-                        .addComponent(idTXT))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(nameRB)
-                        .addGap(104, 104, 104)
-                        .addComponent(nameTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(prereqRB)
-                            .addComponent(teacherRB)
-                            .addComponent(deptRB))
-                        .addGap(69, 69, 69)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teacherTXT)
-                            .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-                            .addComponent(deptTXT)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(statusRB)
-                        .addGap(97, 97, 97)
-                        .addComponent(statusTXT)))
+                    .addComponent(idTXT)
+                    .addComponent(nameTXT)
+                    .addComponent(statusTXT)
+                    .addComponent(teacherTXT)
+                    .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                    .addComponent(deptTXT))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -210,6 +202,7 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -221,6 +214,7 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
         searchButton.setBackground(new java.awt.Color(255, 69, 0));
         searchButton.setForeground(java.awt.Color.white);
         searchButton.setText("SEARCH");
+        searchButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         searchButton.setBorderPainted(false);
         searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +226,7 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(255, 69, 0));
         backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backButton.setBorderPainted(false);
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -243,6 +238,7 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
         clearButton1.setBackground(new java.awt.Color(255, 69, 0));
         clearButton1.setForeground(java.awt.Color.white);
         clearButton1.setText("CLEAR TABLE");
+        clearButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton1.setBorderPainted(false);
         clearButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -259,16 +255,17 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(backButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(clearButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(clearButton1)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(clearButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(101, 101, 101))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +275,7 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(60, 60, 60)
                         .addComponent(clearButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(searchButton)
@@ -357,8 +354,9 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
 
         int rc = model.getRowCount();
-        for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+        for (int i = 0; i < rc; ++i) {
+            model.removeRow(0);
+        }
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -374,46 +372,51 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
             }
             if (nameRB.isSelected()) {
                 String name = nameTXT.getText();
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "WHERE name = \'" + name + "\' ";
                 count += 1;
             }
             if (prereqRB.isSelected()) {
                 String prereq = prereqTXT.getText();
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "prereq = \'" + prereq + "\' ";
                 count += 1;
             }
 
             if (teacherRB.isSelected()) {
                 int teacher = Integer.parseInt(teacherTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "teacher = " + teacher + " ";
                 count += 1;
             }
             if (deptRB.isSelected()) {
                 int dept = Integer.parseInt(deptTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "dept = " + dept + " ";
             }
             if (statusRB.isSelected()) {
                 boolean status = Boolean.parseBoolean(statusTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "status = " + status + " ";
                 count += 1;
             }
@@ -429,14 +432,14 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
                 String teacher = rs.getString("teacher_id");
                 boolean status = rs.getBoolean("status");
                 int dept = rs.getInt("dept_id");
-                
+
                 query = "SELECT grade FROM " + id + " WHERE student_id = " + SessionManager.ID + ";";
-                
+
                 var grade_rs = stmt.executeQuery(query);
-                
+
                 if (grade_rs.next()) {
                     var grade = grade_rs.getFloat("grade");
-                    model.addRow(new Object[] {id, name, prereq, teacher, dept, status, grade});
+                    model.addRow(new Object[]{id, name, prereq, teacher, dept, status, grade});
                 }
             }
         } catch (SQLException e) {
@@ -459,7 +462,7 @@ public class JoinedCoursesStudent extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         int rc = model.getRowCount();
         for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+            model.removeRow(0);
     }//GEN-LAST:event_clearButton1ActionPerformed
 
     /**

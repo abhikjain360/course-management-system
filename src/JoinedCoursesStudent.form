@@ -27,20 +27,21 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="searchButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="backButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="clearButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="clearButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jScrollPane1" min="-2" pref="843" max="-2" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" min="-2" pref="843" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="clearButton1" max="32767" attributes="0"/>
+                          <Component id="backButton" alignment="0" max="32767" attributes="0"/>
+                          <Component id="searchButton" alignment="0" max="32767" attributes="0"/>
+                          <Component id="clearButton" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,7 +54,7 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="clearButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="searchButton" min="-2" max="-2" attributes="0"/>
@@ -78,35 +79,22 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="teacherRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="statusRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="deptRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="prereqRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="nameRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="idRB" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="idRB" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="idTXT" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="nameRB" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                          <Component id="nameTXT" pref="387" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="prereqRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="teacherRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="deptRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="teacherTXT" alignment="0" max="32767" attributes="0"/>
-                              <Component id="prereqTXT" alignment="0" pref="393" max="32767" attributes="0"/>
-                              <Component id="deptTXT" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="statusRB" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                          <Component id="statusTXT" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="idTXT" max="32767" attributes="0"/>
+                      <Component id="nameTXT" max="32767" attributes="0"/>
+                      <Component id="statusTXT" max="32767" attributes="0"/>
+                      <Component id="teacherTXT" alignment="0" max="32767" attributes="0"/>
+                      <Component id="prereqTXT" alignment="0" pref="393" max="32767" attributes="0"/>
+                      <Component id="deptTXT" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>

@@ -116,25 +116,19 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(teacherRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deptRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prereqRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nameRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(idRB)
-                        .addGap(130, 130, 130)
-                        .addComponent(idTXT))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(nameRB)
-                        .addGap(104, 104, 104)
-                        .addComponent(nameTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(prereqRB)
-                            .addComponent(teacherRB)
-                            .addComponent(deptRB))
-                        .addGap(69, 69, 69)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teacherTXT)
-                            .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-                            .addComponent(deptTXT))))
+                    .addComponent(idTXT)
+                    .addComponent(nameTXT)
+                    .addComponent(teacherTXT)
+                    .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                    .addComponent(deptTXT))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -260,25 +254,28 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(15, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(backButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(clearButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(clearButton1)
-                            .addComponent(jButton1))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clearButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(74, 74, 74))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(clearButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(searchButton)
@@ -286,14 +283,11 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
                         .addComponent(backButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearButton1)
-                        .addGap(17, 17, 17)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -353,8 +347,9 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
 
         int rc = model.getRowCount();
-        for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+        for (int i = 0; i < rc; ++i) {
+            model.removeRow(0);
+        }
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -370,47 +365,52 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
             }
             if (nameRB.isSelected()) {
                 String name = nameTXT.getText();
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "WHERE name = \'" + name + "\' ";
                 count += 1;
             }
             if (prereqRB.isSelected()) {
                 String prereq = prereqTXT.getText();
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "prereq = \'" + prereq + "\' ";
                 count += 1;
             }
 
             if (teacherRB.isSelected()) {
                 int teacher = Integer.parseInt(teacherTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "teacher = " + teacher + " ";
                 count += 1;
             }
             if (deptRB.isSelected()) {
                 int dept = Integer.parseInt(deptTXT.getText());
-                if (count > 0)
-                query += "AND ";
-                else
-                query += "WHERE ";
+                if (count > 0) {
+                    query += "AND ";
+                } else {
+                    query += "WHERE ";
+                }
                 query += "dept_id = " + dept + " ";
             }
-            
-            if (count > 0)
+
+            if (count > 0) {
                 query += "AND ";
-            else
+            } else {
                 query += "WHERE ";
+            }
             query += "status = true;";
-            
+
             System.out.println(query);
 
             ResultSet rs = stmt.executeQuery(query);
@@ -422,7 +422,7 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
                 String teacher = rs.getString("teacher_id");
                 int dept = rs.getInt("dept_id");
 
-                model.addRow(new Object[] {id, name, prereq, teacher, dept});
+                model.addRow(new Object[]{id, name, prereq, teacher, dept});
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
@@ -444,20 +444,20 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         int rc = model.getRowCount();
         for (int i = 0; i < rc; ++i)
-        model.removeRow(0);
+            model.removeRow(0);
     }//GEN-LAST:event_clearButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             var conn = DriverManager.getConnection(SessionManager.databaseURL);
             var stmt = conn.createStatement();
-            
+
             for (var row : table.getSelectedRows()) {
                 var query = "INSERT INTO " + table.getValueAt(row, 0).toString() + " VALUES("
                         + SessionManager.ID + ", NULL);";
                 stmt.executeUpdate(query);
             }
-            
+
             JOptionPane.showMessageDialog(rootPane, "Courses successfully joined");
 
         } catch (SQLException e) {

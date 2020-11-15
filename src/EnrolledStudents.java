@@ -22,7 +22,6 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author kaka
@@ -104,6 +103,7 @@ public class EnrolledStudents extends javax.swing.JFrame {
         cancelButton.setBackground(new java.awt.Color(255, 69, 0));
         cancelButton.setForeground(java.awt.Color.white);
         cancelButton.setText("CANCEL");
+        cancelButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cancelButton.setBorderPainted(false);
         cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +115,7 @@ public class EnrolledStudents extends javax.swing.JFrame {
         removeButton.setBackground(new java.awt.Color(255, 69, 0));
         removeButton.setForeground(java.awt.Color.white);
         removeButton.setText("Remove Students");
+        removeButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         removeButton.setBorderPainted(false);
         removeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         removeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +127,7 @@ public class EnrolledStudents extends javax.swing.JFrame {
         gradeButton.setBackground(new java.awt.Color(255, 69, 0));
         gradeButton.setForeground(java.awt.Color.white);
         gradeButton.setText("Change Grade");
+        gradeButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gradeButton.setBorderPainted(false);
         gradeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gradeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -139,17 +141,12 @@ public class EnrolledStudents extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(cancelButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(gradeButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(removeButton)))
-                .addGap(80, 80, 80)
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gradeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -157,16 +154,16 @@ public class EnrolledStudents extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
                 .addComponent(gradeButton)
-                .addGap(71, 71, 71)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(removeButton)
-                .addGap(82, 82, 82)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cancelButton)
-                .addGap(252, 252, 252))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,11 +176,11 @@ public class EnrolledStudents extends javax.swing.JFrame {
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
         var model = (DefaultTableModel) table.getModel();
-        
+
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
-            
+
             for (var row : table.getSelectedRows()) {
                 int id = Integer.parseInt(table.getValueAt(row, 0).toString());
                 String query = "DELETE FROM " + SessionManager.courseId + " WHERE id = " + id + ";";
@@ -191,10 +188,10 @@ public class EnrolledStudents extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
-            
+
             this.setVisible(false);
             this.dispose();
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());
@@ -203,13 +200,13 @@ public class EnrolledStudents extends javax.swing.JFrame {
 
     private void gradeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradeButtonActionPerformed
         float grade = Float.parseFloat(JOptionPane.showInputDialog("Enter new grade : ").toString());
-        
+
         var model = (DefaultTableModel) table.getModel();
-        
+
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
-            
+
             for (var row : table.getSelectedRows()) {
                 int id = Integer.parseInt(table.getValueAt(row, 0).toString());
                 String query = "UPDATE " + SessionManager.courseId + " "
@@ -219,10 +216,10 @@ public class EnrolledStudents extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
-            
+
             this.setVisible(false);
             this.dispose();
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

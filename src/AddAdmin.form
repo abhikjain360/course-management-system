@@ -28,39 +28,29 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                      <Component id="phoneTXT" pref="458" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                      <Component id="emailTXT" pref="458" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nameTXT" max="32767" attributes="0"/>
-                          <Component id="passwordTXT" max="32767" attributes="0"/>
-                          <Component id="idTXT" pref="458" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="phoneTXT" max="32767" attributes="0"/>
+                  <Component id="emailTXT" max="32767" attributes="0"/>
+                  <Component id="nameTXT" max="32767" attributes="0"/>
+                  <Component id="passwordTXT" max="32767" attributes="0"/>
+                  <Component id="idTXT" pref="458" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Component id="backButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="181" max="32767" attributes="0"/>
               <Component id="clearButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
               <Component id="addButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
           </Group>

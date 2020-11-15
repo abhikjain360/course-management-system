@@ -80,9 +80,9 @@ public class ModifyDept extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nameRB)
-                    .addComponent(idRB))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nameRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(idTXT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
@@ -108,6 +108,7 @@ public class ModifyDept extends javax.swing.JFrame {
         changeButton.setBackground(new java.awt.Color(255, 69, 0));
         changeButton.setForeground(java.awt.Color.white);
         changeButton.setText("CHANGE");
+        changeButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         changeButton.setBorderPainted(false);
         changeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         changeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +120,7 @@ public class ModifyDept extends javax.swing.JFrame {
         cancelButton.setBackground(new java.awt.Color(255, 69, 0));
         cancelButton.setForeground(java.awt.Color.white);
         cancelButton.setText("CANCEL");
+        cancelButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cancelButton.setBorderPainted(false);
         cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +132,7 @@ public class ModifyDept extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -151,12 +154,12 @@ public class ModifyDept extends javax.swing.JFrame {
                         .addGap(53, 53, 53)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(changeButton)
-                        .addGap(76, 76, 76)
-                        .addComponent(clearButton)
-                        .addGap(86, 86, 86)
-                        .addComponent(cancelButton)))
+                        .addGap(162, 162, 162)
+                        .addComponent(changeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -169,9 +172,9 @@ public class ModifyDept extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(changeButton)
-                    .addComponent(cancelButton)
-                    .addComponent(clearButton))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(clearButton)
+                    .addComponent(cancelButton))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,14 +211,14 @@ public class ModifyDept extends javax.swing.JFrame {
             }
             if (idRB.isSelected()) {
                 int id = Integer.parseInt(idTXT.getText());
-                if (count > 0)
-                query += ", ";
-                else
-                query += "SET ";
+                if (count > 0) {
+                    query += ", ";
+                } else {
+                    query += "SET ";
+                }
                 query += "id = " + id + " ";
                 count += 1;
             }
-
 
             query += "WHERE id = " + SessionManager.idToChange + ";";
 

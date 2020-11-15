@@ -26,24 +26,17 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="601" max="32767" attributes="0"/>
+              <EmptySpace pref="535" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="changeButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="clearButton" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="cancelButton" max="32767" attributes="0"/>
+                  <Component id="changeButton" pref="79" max="32767" attributes="0"/>
+                  <Component id="clearButton" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,11 +48,11 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Component id="clearButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="changeButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -82,13 +75,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="prereqRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="teacherRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="deptRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="idRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="nameRB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="statusRB" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="teacherRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="statusRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="deptRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="prereqRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="nameRB" alignment="0" max="32767" attributes="0"/>
+                      <Component id="idRB" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">

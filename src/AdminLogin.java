@@ -1,3 +1,4 @@
+
 import javax.swing.JFrame;
 
 /*
@@ -5,7 +6,6 @@ import javax.swing.JFrame;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 // imports for database
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -114,40 +114,36 @@ public class AdminLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(PasswordTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(31, 31, 31)
-                                .addComponent(idTXT))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(loginButton)
-                        .addGap(52, 52, 52)
-                        .addComponent(clearButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ExitButton)
-                        .addGap(34, 34, 34))
+                            .addComponent(idTXT)
+                            .addComponent(PasswordTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(114, 114, 114)
+                                .addGap(102, 102, 102)
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(166, 166, 166)
-                                .addComponent(backButton)))
+                                .addGap(39, 39, 39)
+                                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(44, 44, 44)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,14 +151,13 @@ public class AdminLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(PasswordTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
                     .addComponent(clearButton)
+                    .addComponent(backButton)
                     .addComponent(ExitButton))
-                .addGap(18, 18, 18)
-                .addComponent(backButton)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,19 +166,19 @@ public class AdminLogin extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         SessionManager.ID = Integer.parseInt(idTXT.getText());
         SessionManager.Password = String.valueOf(PasswordTXT.getPassword());
-        
+
         // sql queries
         String query = "SELECT name FROM admin "
                 + "WHERE id = " + SessionManager.ID + " "
                 + "AND password = \'" + SessionManager.Password + "\';";
-        
+
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
 
             // get result from studentQuery
             ResultSet rs = stmt.executeQuery(query);
-            
+
             if (rs.next()) {
                 SessionManager.name = rs.getString("name");
                 JOptionPane.showMessageDialog(rootPane, "Welcome admin " + SessionManager.name);
@@ -197,8 +192,7 @@ public class AdminLogin extends javax.swing.JFrame {
                 idTXT.setText(null);
                 PasswordTXT.setText(null);
             }
-            
-            
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

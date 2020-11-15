@@ -73,6 +73,7 @@ public class AddStudent extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +84,7 @@ public class AddStudent extends javax.swing.JFrame {
         addButton.setBackground(new java.awt.Color(255, 69, 0));
         addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addButton.setBorderPainted(false);
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +96,7 @@ public class AddStudent extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(255, 69, 0));
         backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backButton.setBorderPainted(false);
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -108,13 +111,13 @@ public class AddStudent extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phoneTXT)
@@ -127,9 +130,9 @@ public class AddStudent extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(backButton)
-                .addGap(109, 109, 109)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
                 .addComponent(clearButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                .addGap(163, 163, 163)
                 .addComponent(addButton)
                 .addGap(107, 107, 107))
         );
@@ -189,7 +192,7 @@ public class AddStudent extends javax.swing.JFrame {
         String email = emailTXT.getText();
         long phone = Long.parseLong(phoneTXT.getText());
         int year = Integer.parseInt(yearTXT.getText());
-        
+
         String query = "INSERT INTO student VALUES("
                 + id + ","
                 + "\'" + password + "\',"
@@ -198,18 +201,18 @@ public class AddStudent extends javax.swing.JFrame {
                 + "\'" + email + "\',"
                 + phone + ","
                 + "NULL);";
-        
+
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
 
             stmt.execute(query);
-            
+
             JOptionPane.showMessageDialog(rootPane, "New student added!");
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");
-            
+
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_addButtonActionPerformed

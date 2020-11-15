@@ -126,13 +126,13 @@ public class ModifyCourses extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prereqRB)
-                    .addComponent(teacherRB)
-                    .addComponent(deptRB)
-                    .addComponent(idRB)
-                    .addComponent(nameRB)
-                    .addComponent(statusRB))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(teacherRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statusRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deptRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prereqRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nameRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idRB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(69, 69, 69)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(statusTXT)
@@ -176,6 +176,7 @@ public class ModifyCourses extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -187,12 +188,14 @@ public class ModifyCourses extends javax.swing.JFrame {
         cancelButton.setBackground(new java.awt.Color(255, 69, 0));
         cancelButton.setForeground(java.awt.Color.white);
         cancelButton.setText("CANCEL");
+        cancelButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cancelButton.setBorderPainted(false);
         cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         changeButton.setBackground(new java.awt.Color(255, 69, 0));
         changeButton.setForeground(java.awt.Color.white);
         changeButton.setText("CHANGE");
+        changeButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         changeButton.setBorderPainted(false);
         changeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         changeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -208,19 +211,15 @@ public class ModifyCourses extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(535, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(changeButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(clearButton)
-                            .addComponent(cancelButton))))
-                .addGap(39, 39, 39))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(changeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,11 +229,11 @@ public class ModifyCourses extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(46, 46, 46)
                         .addComponent(clearButton)
-                        .addGap(33, 33, 33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cancelButton)
-                        .addGap(29, 29, 29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(changeButton))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -304,10 +303,10 @@ public class ModifyCourses extends javax.swing.JFrame {
         try {
             var conn = DriverManager.getConnection(SessionManager.databaseURL);
             var stmt = conn.createStatement();
-            
+
             String query = "UPDATE courses ";
             int count = 0;
-            
+
             if (idRB.isSelected()) {
                 String id = idTXT.getText();
                 query += "SET id = \'" + id + "\' ";
@@ -315,53 +314,58 @@ public class ModifyCourses extends javax.swing.JFrame {
             }
             if (nameRB.isSelected()) {
                 String name = nameTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "name = \'" + name + "\' ";
                 count += 1;
             }
             if (prereqRB.isSelected()) {
                 String prereq = prereqTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "prereq = \'" + prereq + "\' ";
                 count += 1;
             }
-            
+
             if (teacherRB.isSelected()) {
                 int teacher = Integer.parseInt(teacherTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "teacher = " + teacher + " ";
                 count += 1;
             }
             if (deptRB.isSelected()) {
                 int dept = Integer.parseInt(deptTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "dept = " + dept + " ";
                 count += 1;
             }
             if (statusRB.isSelected()) {
                 boolean status = Boolean.parseBoolean(statusTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += ", ";
-                else
+                } else {
                     query += "SET ";
+                }
                 query += "status = " + status + " ";
             }
 
             count = stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
             System.out.println(e);

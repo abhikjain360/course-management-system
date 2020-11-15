@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
 // import for showMessageDialog
@@ -64,6 +65,7 @@ public class AddCourseTeacher extends javax.swing.JFrame {
         addButton.setBackground(new java.awt.Color(255, 69, 0));
         addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addButton.setBorderPainted(false);
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +77,7 @@ public class AddCourseTeacher extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +89,7 @@ public class AddCourseTeacher extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(255, 69, 0));
         backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backButton.setBorderPainted(false);
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,33 +105,26 @@ public class AddCourseTeacher extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(101, 101, 101)
-                                .addComponent(idTXT))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(75, 75, 75)
-                                .addComponent(nameTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(41, 41, 41)
-                                .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(backButton)
-                        .addGap(135, 135, 135)
+                        .addGap(117, 117, 117)
                         .addComponent(clearButton)
-                        .addGap(109, 109, 109)
+                        .addGap(127, 127, 127)
                         .addComponent(addButton)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 153, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addGap(81, 81, 81)
-                        .addComponent(deptTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idTXT)
+                            .addComponent(nameTXT)
+                            .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                            .addComponent(deptTXT))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -161,7 +158,6 @@ public class AddCourseTeacher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
         String name = nameTXT.getText();
         String prereq = prereqTXT.getText();
         String id = idTXT.getText();
@@ -173,27 +169,27 @@ public class AddCourseTeacher extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
 
             String query;
-            
+
             if (prereq.trim().isEmpty()) {
                 query = "INSERT INTO courses VALUES("
-                    + "\'" + id + "\',"
-                    + "\'" + name + "\',"
-                    + "" + teacher + ","
-                    + "NULL,"
-                    + dept + ", 1);";
+                        + "\'" + id + "\',"
+                        + "\'" + name + "\',"
+                        + "" + teacher + ","
+                        + "NULL,"
+                        + dept + ", 1);";
             } else {
                 query = "INSERT INTO courses VALUES("
-                    + "\'" + id + "\',"
-                    + "\'" + name + "\',"
-                    + "" + teacher + ","
-                    + "\'" + prereq + "\',"
-                    + dept + ", 1);";
+                        + "\'" + id + "\',"
+                        + "\'" + name + "\',"
+                        + "" + teacher + ","
+                        + "\'" + prereq + "\',"
+                        + dept + ", 1);";
             }
-            
+
             stmt.execute(query);
-            
+
             query = "CREATE TABLE " + id + " (student_id int references student(id), grade decimal(5,2))";
-            
+
             stmt.execute(query);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
@@ -202,7 +198,6 @@ public class AddCourseTeacher extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        // TODO add your handling code here:
         nameTXT.setText(null);
         prereqTXT.setText(null);
         idTXT.setText(null);
@@ -210,7 +205,6 @@ public class AddCourseTeacher extends javax.swing.JFrame {
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
         JFrame newFrame = new TeacherHome();
         newFrame.setVisible(true);
         newFrame.setEnabled(true);

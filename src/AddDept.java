@@ -56,6 +56,7 @@ public class AddDept extends javax.swing.JFrame {
         addButton.setBackground(new java.awt.Color(255, 69, 0));
         addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addButton.setBorderPainted(false);
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +68,7 @@ public class AddDept extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +80,7 @@ public class AddDept extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(255, 69, 0));
         backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backButton.setBorderPainted(false);
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -94,10 +97,6 @@ public class AddDept extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nameTXT))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(backButton)
                         .addGap(135, 135, 135)
                         .addComponent(clearButton)
@@ -105,9 +104,13 @@ public class AddDept extends javax.swing.JFrame {
                         .addComponent(addButton)
                         .addGap(0, 59, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(44, 44, 44)
-                        .addComponent(idTXT)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idTXT)
+                            .addComponent(nameTXT))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -143,8 +146,8 @@ public class AddDept extends javax.swing.JFrame {
                     + id + ","
                     + "\'" + name + "\');";
 
-                    stmt.execute(query);
-                    JOptionPane.showMessageDialog(rootPane, "New department added!");
+            stmt.execute(query);
+            JOptionPane.showMessageDialog(rootPane, "New department added!");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

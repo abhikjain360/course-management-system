@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author kaka
+ * @author kakaF
  */
 public class AddCourseAdmin extends javax.swing.JFrame {
 
@@ -79,6 +79,7 @@ public class AddCourseAdmin extends javax.swing.JFrame {
         addButton.setBackground(new java.awt.Color(255, 69, 0));
         addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addButton.setBorderPainted(false);
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +91,7 @@ public class AddCourseAdmin extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +103,7 @@ public class AddCourseAdmin extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(255, 69, 0));
         backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backButton.setBorderPainted(false);
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,36 +118,29 @@ public class AddCourseAdmin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(101, 101, 101)
-                        .addComponent(idTXT))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(81, 81, 81)
-                        .addComponent(deptTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(75, 75, 75)
-                        .addComponent(nameTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(teacherTXT)
-                            .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))))
+                    .addComponent(deptTXT)
+                    .addComponent(nameTXT)
+                    .addComponent(idTXT)
+                    .addComponent(teacherTXT)
+                    .addComponent(prereqTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(backButton)
-                .addGap(135, 135, 135)
+                .addGap(120, 120, 120)
                 .addComponent(clearButton)
-                .addGap(109, 109, 109)
+                .addGap(124, 124, 124)
                 .addComponent(addButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,27 +188,27 @@ public class AddCourseAdmin extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
 
             String query;
-            
+
             if (prereq.trim().isEmpty()) {
                 query = "INSERT INTO courses VALUES("
-                    + "\'" + id + "\',"
-                    + "\'" + name + "\',"
-                    + "" + teacher + ","
-                    + "NULL,"
-                    + dept + ", 1);";
+                        + "\'" + id + "\',"
+                        + "\'" + name + "\',"
+                        + "" + teacher + ","
+                        + "NULL,"
+                        + dept + ", 1);";
             } else {
                 query = "INSERT INTO courses VALUES("
-                    + "\'" + id + "\',"
-                    + "\'" + name + "\',"
-                    + "" + teacher + ","
-                    + "\'" + prereq + "\',"
-                    + dept + ", 1);";
+                        + "\'" + id + "\',"
+                        + "\'" + name + "\',"
+                        + "" + teacher + ","
+                        + "\'" + prereq + "\',"
+                        + dept + ", 1);";
             }
-            
+
             stmt.execute(query);
-            
+
             query = "CREATE TABLE " + id + " (student_id int references student(id), grade decimal(5,2))";
-            
+
             stmt.execute(query);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");

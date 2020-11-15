@@ -17,7 +17,6 @@ import javax.swing.JFrame;
 // import for showMessageDialog
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author kaka
@@ -65,6 +64,7 @@ public class AddTeacher extends javax.swing.JFrame {
         addButton.setBackground(new java.awt.Color(255, 69, 0));
         addButton.setForeground(java.awt.Color.white);
         addButton.setText("ADD");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addButton.setBorderPainted(false);
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +78,7 @@ public class AddTeacher extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(255, 69, 0));
         backButton.setForeground(java.awt.Color.white);
         backButton.setText("<<");
+        backButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backButton.setBorderPainted(false);
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +96,7 @@ public class AddTeacher extends javax.swing.JFrame {
         clearButton.setBackground(new java.awt.Color(255, 69, 0));
         clearButton.setForeground(java.awt.Color.white);
         clearButton.setText("CLEAR");
+        clearButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clearButton.setBorderPainted(false);
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -112,47 +114,43 @@ public class AddTeacher extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(65, 65, 65)
-                                .addComponent(nameTXT))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(35, 35, 35)
-                                .addComponent(passwordTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(91, 91, 91)
-                                .addComponent(idTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3))
-                                .addGap(121, 121, 121)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(salaryTXT)
-                                    .addComponent(emailTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(81, 81, 81)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(deptTXT)
-                                    .addComponent(phoneTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)))))
+                            .addComponent(salaryTXT)
+                            .addComponent(emailTXT)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(backButton)
-                        .addGap(135, 135, 135)
-                        .addComponent(clearButton)
-                        .addGap(109, 109, 109)
-                        .addComponent(addButton)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(phoneTXT)
+                            .addComponent(deptTXT)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idTXT)
+                            .addComponent(nameTXT)
+                            .addComponent(passwordTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(backButton)
+                .addGap(126, 126, 126)
+                .addComponent(clearButton)
+                .addGap(118, 118, 118)
+                .addComponent(addButton)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,12 +183,12 @@ public class AddTeacher extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(deptTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton)
                     .addComponent(addButton)
                     .addComponent(backButton))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,31 +202,31 @@ public class AddTeacher extends javax.swing.JFrame {
         long phone = Long.parseLong(phoneTXT.getText());
         float salary = Float.parseFloat(salaryTXT.getText());
         String dept = deptTXT.getText();
-        
+
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
-            
+
             String query = "SELECT id FROM department WHERE name =\'" + dept + "\';";
 
             ResultSet rs = stmt.executeQuery(query);
-            
+
             if (rs.next()) {
                 int dept_id = rs.getInt("id");
-                
+
                 query = "INSERT INTO teacher VALUES("
-                    + id + ","
-                    + "\'" + password + "\',"
-                    + "\'" + name + "\',"
-                    + "\'" + email + "\',"
-                    + phone + ","
-                    + salary + ","
-                    + dept_id + ");";
-                
+                        + id + ","
+                        + "\'" + password + "\',"
+                        + "\'" + name + "\',"
+                        + "\'" + email + "\',"
+                        + phone + ","
+                        + salary + ","
+                        + dept_id + ");";
+
                 try {
                     stmt.execute(query);
                     JOptionPane.showMessageDialog(rootPane, "New teacher added!");
-                    
+
                 } catch (SQLException e) {
                     JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
                     System.out.println(e.getMessage());
@@ -236,17 +234,15 @@ public class AddTeacher extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Incorrect Department!\nPlease enter correct Department");
                 deptTXT.setText(null);
-                
+
             }
 
-            
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
         JFrame newFrame = new AdminHome();
         newFrame.setVisible(true);
         newFrame.setEnabled(true);
@@ -255,7 +251,6 @@ public class AddTeacher extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        // TODO add your handling code here:
         nameTXT.setText(null);
         passwordTXT.setText(null);
         phoneTXT.setText(null);
