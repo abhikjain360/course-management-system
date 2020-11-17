@@ -409,7 +409,7 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
             } else {
                 query += "WHERE ";
             }
-            query += "status = true;";
+            query += "status = 1;";
 
             System.out.println(query);
 
