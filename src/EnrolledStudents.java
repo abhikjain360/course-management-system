@@ -213,7 +213,7 @@ public class EnrolledStudents extends javax.swing.JFrame {
                 int id = Integer.parseInt(table.getValueAt(row, 0).toString());
                 String query = "UPDATE " + SessionManager.courseId + " "
                         + "SET grade = " + grade + " "
-                        + "WHERE id = " + id + ";";
+                        + "WHERE student_id = " + id + ";";
                 stmt.execute(query);
             }
 
