@@ -365,6 +365,7 @@ public class ModifyCourses extends javax.swing.JFrame {
 
             count = stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
+            conn.close();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");

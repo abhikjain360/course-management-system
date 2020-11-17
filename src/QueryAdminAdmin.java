@@ -378,6 +378,8 @@ public class QueryAdminAdmin extends javax.swing.JFrame {
 
                 model.addRow(new Object[]{name, id, email, phone});
             }
+            
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

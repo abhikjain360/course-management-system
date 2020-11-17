@@ -237,6 +237,7 @@ public class AddTeacher extends javax.swing.JFrame {
 
             }
 
+            conn.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

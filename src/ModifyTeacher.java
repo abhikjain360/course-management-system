@@ -409,6 +409,8 @@ public class ModifyTeacher extends javax.swing.JFrame {
 
             count = stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
+            
+            conn.close();
 
             this.setVisible(false);
             this.dispose();

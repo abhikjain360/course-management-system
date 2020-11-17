@@ -91,17 +91,19 @@ public class RemoveStudent extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backButton)
-                    .addComponent(jLabel1))
-                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(clearButton)
-                        .addGap(93, 93, 93)
-                        .addComponent(removeButton))
-                    .addComponent(idTXT))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(13, 13, 13)
+                        .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,12 +112,12 @@ public class RemoveStudent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
                     .addComponent(clearButton)
-                    .addComponent(removeButton)
-                    .addComponent(backButton))
-                .addGap(33, 33, 33))
+                    .addComponent(removeButton))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,20 +131,22 @@ public class RemoveStudent extends javax.swing.JFrame {
         int id = Integer.parseInt(idTXT.getText());
 
         String query = "DELETE FROM student "
-        + " WHERE id = "+ id + ";";
+                + " WHERE id = " + id + ";";
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
 
             int rows = stmt.executeUpdate(query);
-            
+
             if (rows == 0) {
                 JOptionPane.showMessageDialog(rootPane, "No student has this ID! Try Again");
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Student Deleted!");
             }
-            
+
+            conn.close();
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");
 

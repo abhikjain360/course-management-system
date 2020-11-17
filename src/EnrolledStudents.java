@@ -188,6 +188,8 @@ public class EnrolledStudents extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
+            
+            conn.close();
 
             this.setVisible(false);
             this.dispose();
@@ -216,6 +218,8 @@ public class EnrolledStudents extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(rootPane, "Successfully changed!");
+            
+            conn.close();
 
             this.setVisible(false);
             this.dispose();

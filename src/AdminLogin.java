@@ -193,6 +193,7 @@ public class AdminLogin extends javax.swing.JFrame {
                 PasswordTXT.setText(null);
             }
 
+            conn.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

@@ -424,6 +424,8 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
 
                 model.addRow(new Object[]{id, name, prereq, teacher, dept});
             }
+            
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());
@@ -459,6 +461,8 @@ public class QueryCoursesStudent extends javax.swing.JFrame {
             }
 
             JOptionPane.showMessageDialog(rootPane, "Courses successfully joined");
+            
+            conn.close();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");

@@ -120,16 +120,16 @@ public class AddAdmin extends javax.swing.JFrame {
                     .addComponent(emailTXT)
                     .addComponent(nameTXT)
                     .addComponent(passwordTXT)
-                    .addComponent(idTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE))
+                    .addComponent(idTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(backButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addComponent(clearButton)
-                .addGap(178, 178, 178)
-                .addComponent(addButton)
-                .addGap(107, 107, 107))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,12 +154,12 @@ public class AddAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(phoneTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
                     .addComponent(clearButton)
-                    .addComponent(addButton)
-                    .addComponent(backButton))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(addButton))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,11 +181,11 @@ public class AddAdmin extends javax.swing.JFrame {
         long phone = Long.parseLong(phoneTXT.getText());
 
         String query = "INSERT INTO admin VALUES("
-        + id + ","
-        + "\'" + password + "\',"
-        + "\'" + name + "\',"
-        + "\'" + email + "\',"
-        + phone + ");";
+                + id + ","
+                + "\'" + password + "\',"
+                + "\'" + name + "\',"
+                + "\'" + email + "\',"
+                + phone + ");";
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -194,6 +194,8 @@ public class AddAdmin extends javax.swing.JFrame {
             stmt.execute(query);
 
             JOptionPane.showMessageDialog(rootPane, "New admin added!");
+
+            conn.close();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");

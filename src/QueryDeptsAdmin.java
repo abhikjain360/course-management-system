@@ -310,6 +310,8 @@ public class QueryDeptsAdmin extends javax.swing.JFrame {
 
                 model.addRow(new Object[]{id, name});
             }
+            
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

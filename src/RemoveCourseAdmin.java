@@ -92,18 +92,18 @@ public class RemoveCourseAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addGap(30, 30, 30)
                         .addComponent(jLabel1)
-                        .addGap(33, 33, 33)
+                        .addGap(18, 18, 18)
                         .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(backButton)
-                        .addGap(66, 66, 66)
-                        .addComponent(clearButton)
-                        .addGap(60, 60, 60)
-                        .addComponent(removeButton)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addGap(58, 58, 58)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,12 +112,12 @@ public class RemoveCourseAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
                     .addComponent(clearButton)
-                    .addComponent(removeButton)
-                    .addComponent(backButton))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(removeButton))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,8 +131,8 @@ public class RemoveCourseAdmin extends javax.swing.JFrame {
         String id = idTXT.getText();
 
         String query1 = "DELETE FROM courses "
-        + " WHERE id = \'"+ id + "\';";
-        
+                + " WHERE id = \'" + id + "\';";
+
         String query2 = "DROP TABLE " + id;
 
         try {
@@ -142,6 +142,7 @@ public class RemoveCourseAdmin extends javax.swing.JFrame {
             stmt.execute(query1);
             stmt.execute(query2);
 
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");
 

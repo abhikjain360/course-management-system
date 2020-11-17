@@ -209,7 +209,8 @@ public class AddStudent extends javax.swing.JFrame {
             stmt.execute(query);
 
             JOptionPane.showMessageDialog(rootPane, "New student added!");
-
+            
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");
 

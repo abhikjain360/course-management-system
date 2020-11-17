@@ -148,6 +148,7 @@ public class AddDept extends javax.swing.JFrame {
 
             stmt.execute(query);
             JOptionPane.showMessageDialog(rootPane, "New department added!");
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

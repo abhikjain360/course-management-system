@@ -280,19 +280,13 @@ public class QueryTeachersTeacher extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(97, 97, 97)
-                                .addComponent(backButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(clearButton)
-                                    .addComponent(searchButton)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(clearButton1)))
-                        .addGap(0, 131, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clearButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -304,13 +298,13 @@ public class QueryTeachersTeacher extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(40, 40, 40)
                         .addComponent(searchButton)
-                        .addGap(32, 32, 32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(backButton)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearButton)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearButton1)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -380,18 +374,19 @@ public class QueryTeachersTeacher extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-        
+
         int rc = model.getRowCount();
-        for (int i = 0; i < rc; ++i)
-            model.removeRow(0);                              
-        
+        for (int i = 0; i < rc; ++i) {
+            model.removeRow(0);
+        }
+
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
             Statement stmt = conn.createStatement();
-            
+
             String query = "SELECT * FROM teacher ";
             int count = 0;
-            
+
             if (nameRB.isSelected()) {
                 String name = nameTXT.getText();
                 query += "WHERE name = \'" + name + "\' ";
@@ -399,62 +394,68 @@ public class QueryTeachersTeacher extends javax.swing.JFrame {
             }
             if (passwordRB.isSelected()) {
                 String password = passwordTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "password = \'" + password + "\' ";
                 count += 1;
             }
             if (idRB.isSelected()) {
                 int id = Integer.parseInt(idTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "id = " + id + " ";
                 count += 1;
             }
             if (emailRB.isSelected()) {
                 String email = emailTXT.getText();
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "email = \'" + email + "\' ";
                 count += 1;
             }
             if (phoneRB.isSelected()) {
                 long phone = Long.parseLong(phoneTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "phone = " + phone + " ";
                 count += 1;
             }
             if (salaryRB.isSelected()) {
                 float salary = Float.parseFloat(salaryTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "salary = " + salary + " ";
                 count += 1;
             }
             if (deptRB.isSelected()) {
                 int dept = Integer.parseInt(deptTXT.getText());
-                if (count > 0)
+                if (count > 0) {
                     query += "AND ";
-                else
+                } else {
                     query += "WHERE ";
+                }
                 query += "dept = " + dept + " ";
             }
-            
+
             query += ";";
 
             ResultSet rs = stmt.executeQuery(query);
-            
+
             while (rs.next()) {
                 String name = rs.getString("name");
                 String password = rs.getString("password");
@@ -463,9 +464,11 @@ public class QueryTeachersTeacher extends javax.swing.JFrame {
                 String email = rs.getString("email");
                 long phone = rs.getLong("phone");
                 int dept = rs.getInt("department");
-                
-                model.addRow(new Object[] {name, password, id, salary, email, phone, dept});
+
+                model.addRow(new Object[]{name, password, id, salary, email, phone, dept});
             }
+
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

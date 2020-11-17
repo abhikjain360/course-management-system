@@ -99,12 +99,12 @@ public class RemoveAdmin extends javax.swing.JFrame {
                         .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(backButton)
-                        .addGap(66, 66, 66)
-                        .addComponent(clearButton)
-                        .addGap(60, 60, 60)
-                        .addComponent(removeButton)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,10 +115,10 @@ public class RemoveAdmin extends javax.swing.JFrame {
                     .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
                     .addComponent(clearButton)
-                    .addComponent(removeButton)
-                    .addComponent(backButton))
-                .addContainerGap(34, Short.MAX_VALUE))
+                    .addComponent(removeButton))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,6 +145,8 @@ public class RemoveAdmin extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Student Deleted!");
             }
+            
+            conn.close();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");

@@ -460,6 +460,8 @@ public class QueryStudentsTeacher extends javax.swing.JFrame {
 
                 model.addRow(new Object[]{name, password, id, grade, email, phone, year});
             }
+            
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

@@ -191,6 +191,10 @@ public class AddCourseTeacher extends javax.swing.JFrame {
             query = "CREATE TABLE " + id + " (student_id int references student(id), grade decimal(5,2))";
 
             stmt.execute(query);
+            
+            JOptionPane.showMessageDialog(rootPane, "New course added!");
+            
+            conn.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input.\nTry again with correct values");
             System.out.println(e.getMessage());

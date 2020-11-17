@@ -97,12 +97,12 @@ public class RemoveTeacher extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(backButton)
-                        .addGap(66, 66, 66)
-                        .addComponent(clearButton)
-                        .addGap(60, 60, 60)
-                        .addComponent(removeButton)))
+                        .addGap(59, 59, 59)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -112,12 +112,12 @@ public class RemoveTeacher extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(idTXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton)
                     .addComponent(clearButton)
-                    .addComponent(removeButton)
-                    .addComponent(backButton))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(removeButton))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,7 +131,7 @@ public class RemoveTeacher extends javax.swing.JFrame {
         int id = Integer.parseInt(idTXT.getText());
 
         String query = "DELETE FROM teacher "
-        + " WHERE id = "+ id + ";";
+                + " WHERE id = " + id + ";";
 
         try {
             Connection conn = DriverManager.getConnection(SessionManager.databaseURL);
@@ -144,6 +144,8 @@ public class RemoveTeacher extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Student Deleted!");
             }
+
+            conn.close();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Input. Try again with correct values");
