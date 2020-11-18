@@ -1,0 +1,145 @@
+\documentclass[12pt, a4paper]{article}
+
+% for changing title styles
+\usepackage{titlesec}
+% sensible margins
+\usepackage[margin=0.6in]{geometry}
+% include images
+\usepackage{graphicx}
+\usepackage{float}
+% something that everyone includes no idea why
+\usepackage[utf8]{inputenc}
+% change enumerate numbering styles
+\usepackage{enumitem}
+% footer
+\usepackage{lipsum} % for filler text
+% for code part
+\usepackage{listings}
+\usepackage{minted}
+\usepackage[most]{tcolorbox}
+% fancy header
+\usepackage{fancyhdr}
+
+%references source file
+% titleformat for chapters
+\titleformat{\chapter}[block]
+{\bfseries\huge}
+{\thechapter}
+{10pt}
+{}
+
+\titlespacing{\chapter} {12pt} {12pt} {12pt}
+
+% titleformat for chapters
+\titleformat{\section} [hang]
+{\bfseries\Large}
+{\thesection}
+{10pt}
+{}
+
+\titlespacing{\section} {12pt} {12pt} {12pt}
+
+% paragraph indentations
+\setlength{\parindent} {2em}
+\setlength{\parskip} {1em}
+\renewcommand{\baselinestretch} {1.5}
+
+\pagestyle{fancy}
+\cfoot{\thepage}
+
+% inline code highlighting
+\lstset{
+    basicstyle=\color{blue}\ttfamily,
+    keywordstyle=\color{orange}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{green}\ttfamily,
+    morecomment=[l][\color{magenta}]{\#}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+	{\vspace*{3cm}}
+	\textbf{\Huge{Course Management System}}\\
+	{\vspace{2em}}
+	{\large International Institute of Information Technology, Naya Raipur}\\
+	{\vspace{2em}}
+	{\includegraphics[width=1in]{download.png}} \\
+	{\vspace{3em}}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			Ayush Mehar \\
+			191000011 \\
+			BTech CSE $3^{rd}$ Sem \\
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			Ishan Kumar Kaler \\
+			191000018 \\
+			BTech CSE $3^{rd}$ Sem \\
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		\begin{center}
+			Abhik Jain \\
+			191000001 \\
+			BTech CSE $3^{rd}$ Sem \\
+		\end{center}
+	\end{minipage}
+	\\
+	{\vspace{3cm}}
+    {\Large \textbf{Project Report}}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\addcontentsline{toc}{section}{Introduction}
+\section*{Introduction}
+
+We made this project as a part of our \textbf{Object Oriented Programming - 2} course. This is is \textbf{Course Management System}, written in pure Java. This program provides extensive capabilities to teacher to provide courses to students and gor students to join the courses, along with an admin role to manage all things.
+
+All the information in stored in a database using \textbf{SQLite3}, a simple SQL implementation which allows all the data to be stored in form of a password-protected binary file which can be shared without much security concerns. For connecting to the database, we used \textbf{JDBC SQLite3 Drivers}, along with \lstinline{java.sql} package.
+
+Users are divided into 3 categories: Student, Teacher \& Administrator, and their is proper division of powers and capabilities for each role. Students can only query courses, join courses and see their grades. Teachers can query about all things in database, but cannot modify data, except for data concerning his/her particular course. Admins are given ability to modify all the data in the database.
+
+
+The entire program is written in pure Java, using \textbf{OpenJDK 14}, and is available under MIT License (though some softwares and technologies used in this project might be under a different license, and we don't claim to own them). We only used Java instead of other languages often used for this type of software, like Python or JavaScript because our aim from this project was to get a better understanding of Object Oriented Programming and how it is used to do efficient software development.
+
+Each of the following sections will discuss 3 main technologies used in our project: Java, SQLite3, and JDBC.
+
+\newpage
+
+\section{Java}
+
+\textbf{Java} is a popular programming language, which is used to write a wide range of programs because of it's general-purpose nature. It is the \textit{de-facto} language for people who wish to code in abstract and Object-Oriented manner, as Java has a well structured and well-defined ways to do Inheritance, Polymorphism and other things done in Object-Oriented Programming.
+
+We used Java in our project for various reasons:
+\begin{itemize}
+
+	\item \textbf{General Purpose Language:} Java is a general purpose language, and thus has extensive capabilities allowing us to easily use it exclusively in our project.
+	\item \textbf{Self Contained:} Java was designed to inherently be capable of doing almost everything required in software development, and thus is not dependent on any other language, except for SQL which again could have been done in pure Java but not as easily.
+	\item \textbf{Extensive Support:} Java is a popular language, and thus has a wide variety of packages to help us write our software. It also has well integrated coding tools which make coding a lot easier.
+	\item \textbf{Excellent Documentation:} Various Java compile systems provide a built-in way to generate documentation, and thus is often used by people writing libraries to provide detailed documentation of all the functionalities of the library
+
+\end{itemize}
+
+\section{SQLite3}
+
+\textbf{SQLite3} is a Query Language implementation which is often used to with Python. We used it to allow easy sharing of database between the developers, as it can be stored in a single password protected binary file.
+
+In real world applications we would use something like MySQL or PostrgeSQL which are designed to be accessed over the internet and have more options to limit permissions and access to the database, along with ability to add users. But because sharing and working together on such a database is difficult when working together remotely, we decided to not use it.
+
+\section{JDBC}
+
+JDBC stands for \textbf{Java DataBase Connectivity}. In order to connect to database, we need to write a seperate module just to handle requests and queries to database and get information and response from it. Writing such a module from scratch is a daunting task, and so almost all SQL implementations provide a JDBC Library which can be used directly in our program, so that the developers need not worry about in-depth details of how the database takes in data and just focus on high level logical operations.
+
+For our project, we used \lstinline{sqllite-jdbc-3.8.9.1} to connect to the the database containing all the information.
+
+\end{document}
