@@ -56,6 +56,9 @@
     morecomment=[l][\color{magenta}]{\#}
 }
 
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
 \begin{document}
 
 \thispagestyle{empty}
@@ -112,11 +115,11 @@ Users are divided into 3 categories: Student, Teacher \& Administrator, and thei
 
 The entire program is written in pure Java, using \textbf{OpenJDK 14}, and is available under MIT License (though some softwares and technologies used in this project might be under a different license, and we don't claim to own them). We only used Java instead of other languages often used for this type of software, like Python or JavaScript because our aim from this project was to get a better understanding of Object Oriented Programming and how it is used to do efficient software development.
 
-Each of the following sections will discuss 3 main technologies used in our project: Java, SQLite3, and JDBC.
-
 \newpage
 
-\section{Java}
+\section{Technologies Used}
+
+\subsection*{Java}
 
 \textbf{Java} is a popular programming language, which is used to write a wide range of programs because of it's general-purpose nature. It is the \textit{de-facto} language for people who wish to code in abstract and Object-Oriented manner, as Java has a well structured and well-defined ways to do Inheritance, Polymorphism and other things done in Object-Oriented Programming.
 
@@ -130,16 +133,105 @@ We used Java in our project for various reasons:
 
 \end{itemize}
 
-\section{SQLite3}
+\subsection*{SQLite3}
 
 \textbf{SQLite3} is a Query Language implementation which is often used to with Python. We used it to allow easy sharing of database between the developers, as it can be stored in a single password protected binary file.
 
 In real world applications we would use something like MySQL or PostrgeSQL which are designed to be accessed over the internet and have more options to limit permissions and access to the database, along with ability to add users. But because sharing and working together on such a database is difficult when working together remotely, we decided to not use it.
 
-\section{JDBC}
+\subsection*{JDBC}
 
 JDBC stands for \textbf{Java DataBase Connectivity}. In order to connect to database, we need to write a seperate module just to handle requests and queries to database and get information and response from it. Writing such a module from scratch is a daunting task, and so almost all SQL implementations provide a JDBC Library which can be used directly in our program, so that the developers need not worry about in-depth details of how the database takes in data and just focus on high level logical operations.
 
 For our project, we used \lstinline{sqllite-jdbc-3.8.9.1} to connect to the the database containing all the information.
+
+\section{DataBase Design}
+
+Our database is rather simple. We have 5 main tables: \textbf{student}, \textbf{teacher}, \textbf{admin}, \textbf{courses} \& \textbf{department}. Apart from that, each course has it's own table, with name same as \lstinline{courses.id} and contains ID of all the students that are enrolled in that course.
+
+\vspace*{3em}
+
+\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{c|c}
+	\textbf{Column Name} & \textbf{Data Type} \\
+	\hline
+	id & int (primary key) \\
+	password & string \\
+	name & string \\
+	join\_year & int \\
+	email & string \\
+	phone & long \\
+	grade & float
+	\end{tabular}
+	\end{center}
+	\caption{student}
+\end{table}
+
+\newpage
+
+\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{c|c}
+	\textbf{Column Name} & \textbf{Data Type} \\
+	\hline
+	id & int (primary key) \\
+	password & string \\
+	name & string \\
+	email & string \\
+	phone & long \\
+	salary & float \\
+	department & int (references department.id)
+	\end{tabular}
+	\end{center}
+	\caption{teacher}
+\end{table}
+
+\vspace*{6em}
+
+\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{c|c}
+	\textbf{Column Name} & \textbf{Data Type} \\
+	\hline
+	id & int (primary key) \\
+	password & string \\
+	name & string \\
+	email & string \\
+	phone & long \\
+	\end{tabular}
+	\end{center}
+	\caption{admin}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{c|c}
+	\textbf{Column Name} & \textbf{Data Type} \\
+	\hline
+	id & int (primary key) \\
+	name & string \\
+	\end{tabular}
+	\end{center}
+	\caption{department}
+\end{table}
+
+\newpage
+
+\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{c|c}
+	\textbf{Column Name} & \textbf{Data Type} \\
+	\hline
+	id & string (primary key) \\
+	name & string \\
+	teacher\_id & string (references teacher.id) \\
+	prereq & string \\
+	dept\_id & int (references department.id) \\
+	status & bool
+	\end{tabular}
+	\end{center}
+	\caption{courses}
+\end{table}
 
 \end{document}
