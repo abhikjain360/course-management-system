@@ -31,8 +31,8 @@ public class SessionManager {
     static String name;
 
     // DataBase Connectections
-    static String databaseURL = "jdbc:sqlite:/home/kaka/NetBeansProjects/java-cms/db/cms.db";
-
+    // static String databaseURL = "jdbc:sqlite:/home/kaka/NetBeansProjects/java-cms/db/cms.db";
+    static String databaseURL = "jdbc:sqlite:/C:\\Users\\kumar\\OneDrive\\Documents\\java\\course-management-system\\db\\cms.db";
     static int idToChange;
     static String courseId;
 }
